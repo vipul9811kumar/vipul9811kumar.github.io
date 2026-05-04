@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipul Kumar — Senior AI Data Architect</title>
+    <meta name="description" content="Senior AI Data Architect with 25+ years delivering $50M+ AI transformation programs. Builder of Kinetic Core, VoltLedger, ReSkillio, and RasoiLink.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50%       { background-position: 100% 50%; }
+        }
+        .animated-gradient {
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0c1a2e, #160a2e);
+            background-size: 400% 400%;
+            animation: gradient-shift 14s ease infinite;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .grid-overlay {
+            background-image:
+                linear-gradient(rgba(96,165,250,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(96,165,250,0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .card-glow { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-glow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(96, 165, 250, 0.12);
+        }
+        .nav-blur {
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            background: rgba(15, 23, 42, 0.85);
+        }
+        .metric-chip {
+            background: rgba(96, 165, 250, 0.08);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+        }
+        .tag {
+            background: rgba(167, 139, 250, 0.08);
+            border: 1px solid rgba(167, 139, 250, 0.18);
+        }
+        .timeline-line { position: relative; }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #60a5fa, #a78bfa, #34d399, #f97316);
+            border-radius: 2px;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.4} }
+        .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased">
+
+<!-- ── NAVIGATION ─────────────────────────────────────────────────────────── -->
+<nav class="fixed top-0 w-full z-50 nav-blur border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="font-black text-xl tracking-tight">VK<span class="text-blue-400">.</span></a>
+        <div class="hidden md:flex gap-8 text-sm text-slate-400">
+            <a href="#projects"   class="hover:text-white transition-colors">Projects</a>
+            <a href="#stack"      class="hover:text-white transition-colors">Stack</a>
+            <a href="#about"      class="hover:text-white transition-colors">About</a>
+            <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+            <a href="#contact"    class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <a href="mailto:vk@vkdesignlabs.com"
+           class="text-sm bg-blue-600 hover:bg-blue-500 px-5 py-2 rounded-lg font-medium transition-colors">
+            Get in Touch
+        </a>
+    </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────────────────────────── -->
+<section class="animated-gradient min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+    <div class="absolute inset-0 grid-overlay"></div>
+    <div class="relative z-10 max-w-4xl">
+        <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-blue-300 text-sm mb-8">
+            <span class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></span>
+            Open to strategic engagements &amp; advisory roles
+        </div>
+        <h1 class="text-6xl md:text-8xl font-black tracking-tight leading-none mb-4">
+            Vipul<br><span class="gradient-text">Kumar</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-300 mb-3 font-medium">Senior AI Data Architect</p>
+        <p class="text-slate-400 max-w-2xl mx-auto mb-3 text-base">
+            Azure AI · GCP Vertex AI · Agentic AI · Data Lakehouse · GenAI / RAG
+        </p>
+        <p class="text-slate-500 text-sm mb-12">Corona, CA &nbsp;·&nbsp; Remote · Hybrid · On-site</p>
+
+        <div class="flex flex-wrap gap-4 justify-center mb-16">
+            <a href="#projects"
+               class="bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-900/40">
+                View My Work
+            </a>
+            <a href="mailto:vk@vkdesignlabs.com"
+               class="border border-slate-600 hover:border-blue-400 hover:text-blue-300 px-8 py-4 rounded-xl font-semibold transition-all">
+                vk@vkdesignlabs.com
+            </a>
+        </div>
+
+        <div class="flex flex-wrap gap-10 justify-center">
+            <div class="text-center">
+                <div class="text-4xl font-black text-blue-400">25+</div>
+                <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Years Experience</div>
+            </div>
+            <div class="hidden md:block w-px bg-slate-700 self-stretch"></div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-violet-400">$50M+</div>
+                <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Programs Delivered</div>
+            </div>
+            <div class="hidden md:block w-px bg-slate-700 self-stretch"></div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-emerald-400">4</div>
+                <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Live AI Products</div>
+            </div>
+            <div class="hidden md:block w-px bg-slate-700 self-stretch"></div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-orange-400">91%</div>
+                <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Diagnostic Accuracy</div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-600 flex flex-col items-center gap-2">
+        <span class="uppercase tracking-widest text-xs">Scroll</span>
+        <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ── PROJECTS ───────────────────────────────────────────────────────────── -->
+<section id="projects" class="py-28 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+        <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Portfolio</p>
+        <h2 class="text-4xl md:text-5xl font-black">Deployed AI Ecosystems</h2>
+        <p class="text-slate-400 mt-4 max-w-xl mx-auto leading-relaxed">
+            Production systems at the intersection of AI, critical infrastructure, and real-world scale.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Kinetic Core -->
+        <div class="card-glow reveal bg-slate-800/50 border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full -translate-y-20 translate-x-20 pointer-events-none"></div>
+            <div class="flex items-start justify-between mb-5">
+                <div class="w-12 h-12 bg-blue-500/15 rounded-xl flex items-center justify-center text-2xl">⚡</div>
+                <a href="https://kinetic-core.tech" target="_blank" rel="noopener"
+                   class="text-slate-500 hover:text-blue-400 transition-colors text-sm font-medium">Live ↗</a>
+            </div>
+            <h3 class="text-2xl font-bold mb-1">Kinetic Core</h3>
+            <p class="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">Autonomous Reliability for Critical Power</p>
+            <p class="text-slate-400 mb-6 leading-relaxed text-sm">
+                Fully serverless Azure-native multi-agent platform for data centers, hospitals, and industrial facilities.
+                Three AI agents (Diagnostic · Librarian · Planner) on GPT-4 + Ada-002 reasoning over IoT telemetry and
+                equipment manuals — raw telemetry to repair work order in under 2 minutes, 24/7.
+                Addresses $9k/minute cost-of-downtime and 14-hour manual diagnostic time for mid-size facilities.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+                <span class="metric-chip text-blue-300 text-xs px-3 py-1 rounded-full">91% diagnostic accuracy</span>
+                <span class="metric-chip text-blue-300 text-xs px-3 py-1 rounded-full">&lt;2 min: telemetry → work order</span>
+                <span class="metric-chip text-blue-300 text-xs px-3 py-1 rounded-full">Zero hallucinated repair steps</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Azure OpenAI / GPT-4</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">IoT Hub / Event Grid</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Azure AI Search</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Container Apps</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Bicep IaC</span>
+            </div>
+        </div>
+
+        <!-- VoltLedger -->
+        <div class="card-glow reveal bg-slate-800/50 border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-emerald-500/5 rounded-full -translate-y-20 translate-x-20 pointer-events-none"></div>
+            <div class="flex items-start justify-between mb-5">
+                <div class="w-12 h-12 bg-emerald-500/15 rounded-xl flex items-center justify-center text-2xl">🔋</div>
+                <a href="https://volt-ledger.com" target="_blank" rel="noopener"
+                   class="text-slate-500 hover:text-emerald-400 transition-colors text-sm font-medium">Live ↗</a>
+            </div>
+            <h3 class="text-2xl font-bold mb-1">VoltLedger</h3>
+            <p class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">EV Battery Intelligence API</p>
+            <p class="text-slate-400 mb-6 leading-relaxed text-sm">
+                Financial-grade EV battery risk and residual intelligence for lenders, insurers, and fleet operators.
+                Composite 0–1000 risk index (5 sub-scores), A–F grading, 60-month residual value forecasting, LTV
+                recommendations with risk premium in basis points, and second-life viability pathway — 142ms median latency.
+                EU Battery Passport-ready for 2027 mandate, opening €2B+ European market.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+                <span class="metric-chip text-emerald-300 text-xs px-3 py-1 rounded-full">142ms median API latency</span>
+                <span class="metric-chip text-emerald-300 text-xs px-3 py-1 rounded-full">500K+ API calls/month at launch</span>
+                <span class="metric-chip text-emerald-300 text-xs px-3 py-1 rounded-full">EU Battery Passport-ready</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">GCP Cloud Run</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Next.js 14</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Fastify / TypeScript</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">PostgreSQL / Prisma</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Stripe</span>
+            </div>
+        </div>
+
+        <!-- ReSkillio -->
+        <div class="card-glow reveal bg-slate-800/50 border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-violet-500/5 rounded-full -translate-y-20 translate-x-20 pointer-events-none"></div>
+            <div class="flex items-start justify-between mb-5">
+                <div class="w-12 h-12 bg-violet-500/15 rounded-xl flex items-center justify-center text-2xl">🎯</div>
+                <a href="https://reskillio.com" target="_blank" rel="noopener"
+                   class="text-slate-500 hover:text-violet-400 transition-colors text-sm font-medium">Live ↗</a>
+            </div>
+            <h3 class="text-2xl font-bold mb-1">ReSkillio</h3>
+            <p class="text-violet-400 text-xs font-semibold uppercase tracking-wider mb-4">AI Workforce Intelligence Platform</p>
+            <p class="text-slate-400 mb-6 leading-relaxed text-sm">
+                Enterprise-grade AI career intelligence platform. Upload a resume: get a 5-stage pipeline delivering
+                200+ extracted skills via spaCy NLP, vector-based gap scoring against 8 industry centroids, a
+                Gemini-written career narrative, 90-day reskilling roadmap, and a live opportunity radar for
+                fractional, consulting, and advisory roles. 40–60% improvement in role-fit accuracy across 100K+ profiles.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+                <span class="metric-chip text-violet-300 text-xs px-3 py-1 rounded-full">40–60% role-fit accuracy gain</span>
+                <span class="metric-chip text-violet-300 text-xs px-3 py-1 rounded-full">100K+ candidate profiles</span>
+                <span class="metric-chip text-violet-300 text-xs px-3 py-1 rounded-full">768-dim Vertex AI embeddings</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Vertex AI / Gemini 2.5</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">BigQuery Medallion</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">LangGraph / CrewAI</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">FastAPI / spaCy</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Cloud Run</span>
+            </div>
+        </div>
+
+        <!-- RasoiLink -->
+        <div class="card-glow reveal bg-slate-800/50 border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-orange-500/5 rounded-full -translate-y-20 translate-x-20 pointer-events-none"></div>
+            <div class="flex items-start justify-between mb-5">
+                <div class="w-12 h-12 bg-orange-500/15 rounded-xl flex items-center justify-center text-2xl">🍛</div>
+                <a href="https://rasoilink.com" target="_blank" rel="noopener"
+                   class="text-slate-500 hover:text-orange-400 transition-colors text-sm font-medium">Live ↗</a>
+            </div>
+            <h3 class="text-2xl font-bold mb-1">RasoiLink</h3>
+            <p class="text-orange-400 text-xs font-semibold uppercase tracking-wider mb-4">Multilingual AI Talent Marketplace</p>
+            <p class="text-slate-400 mb-6 leading-relaxed text-sm">
+                Voice-first multilingual NLP matching platform for the Indian restaurant ecosystem across the US.
+                RAG-style retrieval with FAISS vector embeddings matches workers and restaurant owners across 9 dimensions
+                in 8 Indian languages + English — WhatsApp-native, GCP-hosted, 50K+ active users.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+                <span class="metric-chip text-orange-300 text-xs px-3 py-1 rounded-full">50K+ active users</span>
+                <span class="metric-chip text-orange-300 text-xs px-3 py-1 rounded-full">8 Indian languages + English</span>
+                <span class="metric-chip text-orange-300 text-xs px-3 py-1 rounded-full">Voice-first WhatsApp-native</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">GCP</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">FAISS Vector Search</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Fastify / TypeScript</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">React Native / Expo</span>
+                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">PostgreSQL</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ── TECH STACK ─────────────────────────────────────────────────────────── -->
+<section id="stack" class="py-28 px-6 bg-slate-800/25 border-y border-slate-800">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Technology</p>
+            <h2 class="text-4xl md:text-5xl font-black">The Architect's Stack</h2>
+            <p class="text-slate-400 mt-4 max-w-xl mx-auto">Every layer chosen for production reliability, not demo day.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 reveal">
+            <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
+                <div class="text-blue-400 font-bold text-xs uppercase tracking-wider mb-5">AI &amp; GenAI</div>
+                <ul class="space-y-2">
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>Azure OpenAI / GPT-4</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>GCP Vertex AI / Gemini</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>LangChain · LangGraph · CrewAI</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>RAG / Vector Search</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>FAISS · Pinecone · ChromaDB</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>spaCy NLP · HuggingFace</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>AutoGen · Prompt Engineering</li>
+                </ul>
+            </div>
+            <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
+                <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-5">Cloud &amp; MLOps</div>
+                <ul class="space-y-2">
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Azure IoT Hub / Event Grid</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Azure AI Search / CosmosDB</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>GCP BigQuery / BigLake</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Vertex AI Pipelines</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Medallion Architecture</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Model Registry &amp; Drift Monitor</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>AWS (SageMaker · S3 · Lambda)</li>
+                </ul>
+            </div>
+            <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
+                <div class="text-violet-400 font-bold text-xs uppercase tracking-wider mb-5">Backend &amp; Data</div>
+                <ul class="space-y-2">
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>FastAPI / Python 3.12</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>Fastify / TypeScript</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>PostgreSQL / Prisma</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>Redis / BullMQ</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>PySpark · Apache Beam</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>MLflow · Data Mesh</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>TensorFlow · PyTorch · ONNX</li>
+                </ul>
+            </div>
+            <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
+                <div class="text-orange-400 font-bold text-xs uppercase tracking-wider mb-5">Frontend &amp; DevOps</div>
+                <ul class="space-y-2">
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Next.js 14 / React 18</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>React Native / Expo</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Tailwind CSS</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>GitHub Actions CI/CD</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Bicep IaC / Terraform</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Docker / Railway</li>
+                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Turborepo / pnpm</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="mt-10 reveal bg-slate-800/50 border border-slate-700 rounded-xl p-7">
+            <div class="text-blue-400 font-bold text-xs uppercase tracking-wider mb-5">Certifications</div>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-blue-500/10 border border-blue-500/20 text-blue-200 text-sm px-4 py-2 rounded-lg font-medium">Azure AI Engineer Associate</span>
+                <span class="bg-orange-500/10 border border-orange-500/20 text-orange-200 text-sm px-4 py-2 rounded-lg font-medium">AWS Solutions Architect Associate</span>
+                <span class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-200 text-sm px-4 py-2 rounded-lg font-medium">GCP Professional Data Engineer</span>
+                <span class="bg-violet-500/10 border border-violet-500/20 text-violet-200 text-sm px-4 py-2 rounded-lg font-medium">GCP Professional ML Engineer <span class="opacity-60 text-xs">(in progress · 2026)</span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── ABOUT ───────────────────────────────────────────────────────────────── -->
+<section id="about" class="py-28 px-6 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-5 gap-16 items-center">
+        <div class="md:col-span-3 reveal">
+            <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">About</p>
+            <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">
+                The Bridge Between<br>
+                <span class="gradient-text">Vision &amp; Production</span>
+            </h2>
+            <div class="space-y-5 text-slate-300 leading-relaxed">
+                <p>
+                    With over 25 years of experience across manufacturing, energy, critical power, logistics, healthcare,
+                    and financial services, I architect AI operating systems for the physical world.
+                    From scaling <strong class="text-white">$50M+ transformation programs</strong> at Fortune 500 enterprises
+                    to founder-led ventures solving real problems in EV finance, workforce intelligence, and
+                    critical infrastructure reliability.
+                </p>
+                <p class="text-slate-400">
+                    My engineering philosophy is grounded in the <strong class="text-slate-200">Medallion Architecture</strong> principle:
+                    raw data is worthless until it flows through bronze, silver, and gold layers into deterministic,
+                    auditable, production-ready intelligence. Every system I build must be observable,
+                    hallucination-guarded, and drift-monitored in production — not just accurate in a notebook.
+                </p>
+                <p class="text-slate-400">
+                    I've led teams of 10–40 engineers, presented reference architectures to CXO and board-level stakeholders
+                    at 12+ Fortune 500 clients, and closed $30M+ in multi-year AI engagements. The track record is
+                    20–60% productivity and decision-cycle gains across every vertical I've touched.
+                </p>
+                <p class="text-slate-400">
+                    Beyond the code — shaped by running a restaurant and decades of enterprise leadership, I understand
+                    that in critical infrastructure, "zero downtime" is not a goal. It's a requirement.
+                </p>
+            </div>
+        </div>
+        <div class="md:col-span-2 reveal">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center">
+                    <div class="text-3xl font-black text-blue-400 mb-1">25+</div>
+                    <div class="text-slate-400 text-xs uppercase tracking-wider">Years in Tech</div>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center">
+                    <div class="text-3xl font-black text-violet-400 mb-1">4</div>
+                    <div class="text-slate-400 text-xs uppercase tracking-wider">Live AI Products</div>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center">
+                    <div class="text-3xl font-black text-emerald-400 mb-1">$50M+</div>
+                    <div class="text-slate-400 text-xs uppercase tracking-wider">Programs Delivered</div>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center">
+                    <div class="text-3xl font-black text-orange-400 mb-1">40+</div>
+                    <div class="text-slate-400 text-xs uppercase tracking-wider">Engineers Led</div>
+                </div>
+                <div class="col-span-2 bg-slate-800 border border-blue-500/20 rounded-xl p-6">
+                    <div class="text-blue-400 text-xs uppercase tracking-wider font-semibold mb-3">Specializations</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">Agentic AI</span>
+                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">RAG Architecture</span>
+                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">Industrial IoT</span>
+                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">Data Lakehouse</span>
+                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">MLOps</span>
+                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">AI Governance</span>
+                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">FinOps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── EXPERIENCE ─────────────────────────────────────────────────────────── -->
+<section id="experience" class="py-28 px-6 bg-slate-800/25 border-y border-slate-800">
+    <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Career</p>
+            <h2 class="text-4xl md:text-5xl font-black">Experience</h2>
+        </div>
+
+        <div class="relative pl-10 timeline-line space-y-7">
+
+            <!-- VKDesignLabs -->
+            <div class="reveal relative">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-blue-500 border-4 border-slate-900 shadow-lg shadow-blue-500/30"></div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-7">
+                    <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
+                        <h3 class="text-lg font-bold">Founder &amp; Senior AI Data Architect</h3>
+                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2023 – Present</span>
+                    </div>
+                    <p class="text-blue-400 text-sm font-medium mb-3">VKDesignLabs — Enterprise AI Consulting</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Designs end-to-end AI operating systems for industrial and critical infrastructure enterprises.
+                        Leads engagements of 10–15 data engineers across $5M–$50M+ programs on Azure and GCP.
+                        Shipped four production AI products (Kinetic Core, VoltLedger, ReSkillio, RasoiLink).
+                        Achieved 40–60% productivity gains and 30–60% faster decision cycles for clients across
+                        manufacturing, energy, and logistics verticals. 20–30% cloud AI cost reduction via FinOps frameworks.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Birlasoft GPD -->
+            <div class="reveal relative">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-violet-500 border-4 border-slate-900 shadow-lg shadow-violet-500/30"></div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-7">
+                    <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
+                        <h3 class="text-lg font-bold">Global Practice Director — Product &amp; Technology Innovation</h3>
+                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2021 – 2023</span>
+                    </div>
+                    <p class="text-violet-400 text-sm font-medium mb-3">Birlasoft</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Led global AI/ML innovation labs with 40+ engineers and data scientists across India, US, and UK.
+                        Founded and scaled AI/ML innovation labs; generated $15M+ in new practice revenue.
+                        Architected AI platforms serving 10M+ daily transactions. Directed cloud modernization of 1,000+ workloads
+                        — $4M+ annual infrastructure savings. Closed $30M+ in multi-year AI engagements with Fortune 500 CXOs.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Birlasoft ISA -->
+            <div class="reveal relative">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-emerald-500 border-4 border-slate-900 shadow-lg shadow-emerald-500/30"></div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-7">
+                    <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
+                        <h3 class="text-lg font-bold">Innovation &amp; Systems Architect — Industrial AI</h3>
+                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2019 – 2021</span>
+                    </div>
+                    <p class="text-emerald-400 text-sm font-medium mb-3">Birlasoft</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Architected Industrial IoT sensor fusion platforms processing 2TB+/day across 5 regulated manufacturing
+                        plants on 3 continents. Computer vision defect detection: 25%+ accuracy improvement, $8M/year quality-cost reduction.
+                        Edge-cloud AI at sub-50ms inference latency across 200+ edge nodes. Reduced operator onboarding from 12 weeks to 5 weeks.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KPIT -->
+            <div class="reveal relative">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-orange-400 border-4 border-slate-900 shadow-lg shadow-orange-400/30"></div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-7">
+                    <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
+                        <h3 class="text-lg font-bold">Product Owner — Enterprise AR/VR &amp; Wearables</h3>
+                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2014 – 2018</span>
+                    </div>
+                    <p class="text-orange-400 text-sm font-medium mb-3">KPIT Technologies</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Incubated and scaled enterprise AR/VR and wearable computing platform (HoloLens, Vuzix, Unity3D, OpenCV)
+                        from 0 to $12M ARR across 15+ global industrial clients. AI-assisted field maintenance reduced MTTR by 40%.
+                        92% gross retention on per-device SaaS + professional services model.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Earlier leadership -->
+            <div class="reveal relative">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-slate-500 border-4 border-slate-900"></div>
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-7">
+                    <div class="flex flex-wrap justify-between items-start gap-2 mb-4">
+                        <h3 class="text-lg font-bold text-slate-300">Earlier Leadership</h3>
+                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2000 – 2014</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-300 font-medium">CTO / SVP — <span class="text-slate-400 font-normal">GEPL Capital</span></span>
+                            <span class="text-slate-500">2010 – 2014</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-300 font-medium">SVP Technology — <span class="text-slate-400 font-normal">Anand Rathi Securities</span></span>
+                            <span class="text-slate-500">2007 – 2010</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-300 font-medium">Senior Architect — <span class="text-slate-400 font-normal">Synechron</span></span>
+                            <span class="text-slate-500">2004 – 2007</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-300 font-medium">Systems Engineer — <span class="text-slate-400 font-normal">KPIT / IPCS</span></span>
+                            <span class="text-slate-500">2000 – 2004</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-xs mt-4 leading-relaxed">
+                        Financial services platforms, enterprise systems, and large-scale infrastructure modernization across
+                        capital markets, securities trading, and fintech.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Education -->
+        <div class="mt-14 reveal">
+            <p class="text-blue-400 text-xs font-semibold uppercase tracking-widest mb-5">Education</p>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+                    <p class="text-white font-semibold text-sm">MBA, International Business</p>
+                    <p class="text-slate-400 text-sm mt-1">Symbiosis University, India</p>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+                    <p class="text-white font-semibold text-sm">B.E., Electrical &amp; Electronics Engineering</p>
+                    <p class="text-slate-400 text-sm mt-1">Bangalore University, India</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────────────────────── -->
+<section id="contact" class="py-28 px-6 max-w-4xl mx-auto text-center">
+    <div class="reveal">
+        <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Let's Build</p>
+        <h2 class="text-4xl md:text-5xl font-black mb-6">
+            Ready to Architect<br>
+            <span class="gradient-text">Something Real?</span>
+        </h2>
+        <p class="text-slate-400 max-w-lg mx-auto mb-12 text-lg leading-relaxed">
+            Open to strategic consulting, advisory roles, and fractional CTO engagements in
+            AI systems, industrial IoT, and data architecture.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center mb-10">
+            <a href="mailto:vk@vkdesignlabs.com"
+               class="bg-blue-600 hover:bg-blue-500 px-10 py-4 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-900/40 text-lg">
+                vk@vkdesignlabs.com
+            </a>
+            <a href="https://linkedin.com/in/vipulk" target="_blank" rel="noopener"
+               class="border border-slate-600 hover:border-blue-400 hover:text-blue-300 px-10 py-4 rounded-xl font-semibold transition-all text-lg">
+                LinkedIn ↗
+            </a>
+            <a href="https://github.com/vipul9811kumar" target="_blank" rel="noopener"
+               class="border border-slate-600 hover:border-slate-400 hover:text-slate-200 px-10 py-4 rounded-xl font-semibold transition-all text-lg">
+                GitHub ↗
+            </a>
+        </div>
+        <p class="text-slate-500 text-sm">Corona, CA &nbsp;·&nbsp; 919-903-4693 &nbsp;·&nbsp; Remote · Hybrid · On-site</p>
+    </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer class="border-t border-slate-800 py-8 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+        <span>© 2025 Vipul Kumar · VKDesignLabs</span>
+        <div class="flex gap-6">
+            <a href="https://kinetic-core.tech" target="_blank" class="hover:text-slate-300 transition-colors">Kinetic Core</a>
+            <a href="https://volt-ledger.com"   target="_blank" class="hover:text-slate-300 transition-colors">VoltLedger</a>
+            <a href="https://reskillio.com"      target="_blank" class="hover:text-slate-300 transition-colors">ReSkillio</a>
+            <a href="https://rasoilink.com"      target="_blank" class="hover:text-slate-300 transition-colors">RasoiLink</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ── SCROLL REVEAL ──────────────────────────────────────────────────────── -->
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
