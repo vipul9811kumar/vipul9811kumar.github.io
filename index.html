@@ -118,6 +118,21 @@
             color: var(--gold);
         }
 
+        /* global footprint */
+        .global-loc {
+            font-size: 0.8rem;
+            color: #64748b;
+            letter-spacing: 0.01em;
+            padding: 0.2rem 0;
+            transition: color 0.2s;
+        }
+        .global-loc:hover { color: #e2bc6a; }
+        .global-sep {
+            font-size: 0.8rem;
+            color: #1f2937;
+            padding: 0 0.6rem;
+        }
+
         /* book card special */
         .book-card {
             background: linear-gradient(135deg, #0d1117 0%, #110e05 100%);
@@ -214,6 +229,11 @@
             <div class="text-center">
                 <div class="text-4xl font-black gold-text">91%</div>
                 <div class="text-xs uppercase tracking-widest mt-1" style="color:#475569;">Diagnostic Accuracy</div>
+            </div>
+            <div class="hidden md:block w-px self-stretch" style="background:rgba(201,160,62,0.15);"></div>
+            <div class="text-center">
+                <div class="text-4xl font-black gold-text">7</div>
+                <div class="text-xs uppercase tracking-widest mt-1" style="color:#475569;">Countries Lived &amp; Worked</div>
             </div>
         </div>
     </div>
@@ -475,6 +495,28 @@
                     stakeholders at 12+ Fortune 500 clients, and closed $30M+ in multi-year AI engagements.
                     The track record: 20–60% productivity and decision-cycle gains across every vertical I've touched.
                 </p>
+            </div>
+
+            <!-- Global footprint strip -->
+            <div class="mt-10 pt-8" style="border-top:1px solid rgba(201,160,62,0.1);">
+                <p class="text-xs uppercase tracking-widest font-semibold mb-4" style="color:#475569;">
+                    Global Footprint &nbsp;·&nbsp; Lived &amp; worked across 7 countries
+                </p>
+                <div class="flex flex-wrap gap-x-0 gap-y-2">
+                    <span class="global-loc">🇮🇳 India</span>
+                    <span class="global-sep">·</span>
+                    <span class="global-loc">🇬🇧 United Kingdom</span>
+                    <span class="global-sep">·</span>
+                    <span class="global-loc">🇫🇷 Paris, France</span>
+                    <span class="global-sep">·</span>
+                    <span class="global-loc">🇸🇪 Sweden</span>
+                    <span class="global-sep">·</span>
+                    <span class="global-loc">🇳🇴 Norway</span>
+                    <span class="global-sep">·</span>
+                    <span class="global-loc">🇨🇦 Vancouver, Canada</span>
+                    <span class="global-sep">·</span>
+                    <span class="global-loc">🇺🇸 United States</span>
+                </div>
             </div>
         </div>
         <div class="md:col-span-2 reveal">
