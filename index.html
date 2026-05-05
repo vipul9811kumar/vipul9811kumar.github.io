@@ -721,32 +721,37 @@
 
     </div>
 
-    <!-- Book section -->
-    <div class="book-card reveal rounded-2xl p-10 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 rounded-full -translate-y-32 translate-x-32 pointer-events-none"
-             style="background:radial-gradient(circle, rgba(201,160,62,0.1), transparent);"></div>
-        <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full translate-y-24 -translate-x-24 pointer-events-none"
-             style="background:radial-gradient(circle, rgba(201,160,62,0.05), transparent);"></div>
+    <!-- Book section — full-width hero strip -->
+    <div class="reveal rounded-2xl overflow-hidden" style="background:linear-gradient(135deg, #07060e 0%, #0d0c05 50%, #080610 100%); border:1px solid rgba(201,160,62,0.2);">
 
-        <div class="grid md:grid-cols-3 gap-10 items-start relative z-10">
-            <div class="md:col-span-2">
-                <p class="section-label mb-3">Forthcoming Book</p>
-                <h3 class="serif text-3xl md:text-4xl font-black mb-2" style="color:#f1f5f9;">
+        <!-- Top label bar -->
+        <div class="px-8 pt-7 pb-4 flex items-center gap-4" style="border-bottom:1px solid rgba(201,160,62,0.08);">
+            <span class="section-label">Forthcoming Book</span>
+            <div class="flex-1 h-px" style="background:rgba(201,160,62,0.1);"></div>
+            <span class="text-xs" style="color:#334155;">A book by Vipul Kumar &nbsp;·&nbsp; Coming Soon</span>
+        </div>
+
+        <!-- Main grid: content left, 3D mockup right -->
+        <div class="grid md:grid-cols-5 gap-0">
+
+            <!-- LEFT — content -->
+            <div class="md:col-span-3 p-8 md:p-10 flex flex-col justify-center">
+
+                <h3 class="serif text-4xl md:text-5xl font-black mb-2 leading-tight" style="color:#f1f5f9;">
                     The Invisible Game
                 </h3>
-                <p class="text-sm font-medium mb-1" style="color:var(--gold);">
+                <p class="text-sm font-medium mb-8" style="color:var(--gold);">
                     The unwritten rules of corporate power that MBAs never teach you
                 </p>
-                <p class="text-xs mb-6" style="color:#475569;">A book by Vipul Kumar &nbsp;·&nbsp; Coming Soon</p>
 
                 <!-- Pull quote -->
-                <blockquote class="border-l-2 pl-5 mb-6 italic text-base leading-relaxed"
+                <blockquote class="border-l-2 pl-5 mb-8 italic text-lg leading-relaxed"
                             style="border-color:var(--gold); color:#cbd5e1;">
                     "You were hired for your skills. You'll be fired for your politics.
                     And you'll succeed only when you master both."
                 </blockquote>
 
-                <p class="text-sm leading-relaxed mb-5" style="color:#64748b;">
+                <p class="text-sm leading-relaxed mb-8" style="color:#64748b;">
                     Every organisation runs two companies simultaneously — the org chart you can see,
                     and the influence map no one draws. After 30 years across tech, strategy, and finance,
                     Vipul Kumar has decoded the invisible one. This book maps it for the first time —
@@ -754,7 +759,7 @@
                 </p>
 
                 <!-- Three maps -->
-                <div class="space-y-3 mb-7">
+                <div class="space-y-3 mb-8">
                     <div class="flex gap-3 items-start">
                         <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5"
                               style="background:rgba(201,160,62,0.12); color:var(--gold);">Map 1</span>
@@ -773,38 +778,29 @@
                 </div>
 
                 <!-- Article links -->
-                <div class="mb-7">
+                <div class="mb-8">
                     <p class="text-xs uppercase tracking-wider font-semibold mb-3" style="color:#475569;">Read the Series on LinkedIn</p>
                     <div class="space-y-2">
                         <a href="https://www.linkedin.com/pulse/day-i-learned-org-chart-lie-vipul-kumar-0hzle/?trackingId=E29tNjdRQWyDiTiuJUrPeg%3D%3D"
                            target="_blank" rel="noopener"
                            class="flex items-center justify-between rounded-lg px-4 py-3 text-sm transition-all group"
-                           style="background:rgba(201,160,62,0.06); border:1px solid rgba(201,160,62,0.15);">
-                            <span>
-                                <span class="text-xs font-bold mr-2" style="color:var(--gold);">01</span>
-                                <span style="color:#94a3b8;">The day I learned the org chart is a lie</span>
-                            </span>
-                            <span style="color:var(--gold);" class="opacity-60 group-hover:opacity-100 transition-opacity">↗</span>
+                           style="background:rgba(201,160,62,0.05); border:1px solid rgba(201,160,62,0.12);">
+                            <span><span class="text-xs font-bold mr-2" style="color:var(--gold);">01</span><span style="color:#94a3b8;">The day I learned the org chart is a lie</span></span>
+                            <span style="color:var(--gold);" class="opacity-50 group-hover:opacity-100 transition-opacity">↗</span>
                         </a>
                         <a href="https://www.linkedin.com/pulse/invisible-game-series-ended-six-years-work-three-meetings-kumar-asnge/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BB3btUYX9TKqj%2B4Uz1ullBA%3D%3D"
                            target="_blank" rel="noopener"
                            class="flex items-center justify-between rounded-lg px-4 py-3 text-sm transition-all group"
-                           style="background:rgba(201,160,62,0.06); border:1px solid rgba(201,160,62,0.15);">
-                            <span>
-                                <span class="text-xs font-bold mr-2" style="color:var(--gold);">02</span>
-                                <span style="color:#94a3b8;">Every organisation has three power maps. Most know one.</span>
-                            </span>
-                            <span style="color:var(--gold);" class="opacity-60 group-hover:opacity-100 transition-opacity">↗</span>
+                           style="background:rgba(201,160,62,0.05); border:1px solid rgba(201,160,62,0.12);">
+                            <span><span class="text-xs font-bold mr-2" style="color:var(--gold);">02</span><span style="color:#94a3b8;">Every organisation has three power maps. Most know one.</span></span>
+                            <span style="color:var(--gold);" class="opacity-50 group-hover:opacity-100 transition-opacity">↗</span>
                         </a>
                         <a href="https://www.linkedin.com/pulse/dear-gen-z-game-hasnt-changed-only-speed-has-vipul-kumar-xyjle/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BB3btUYX9TKqj%2B4Uz1ullBA%3D%3D"
                            target="_blank" rel="noopener"
                            class="flex items-center justify-between rounded-lg px-4 py-3 text-sm transition-all group"
-                           style="background:rgba(201,160,62,0.06); border:1px solid rgba(201,160,62,0.15);">
-                            <span>
-                                <span class="text-xs font-bold mr-2" style="color:var(--gold);">03</span>
-                                <span style="color:#94a3b8;">Dear Gen Z: the game hasn't changed. Only the speed has.</span>
-                            </span>
-                            <span style="color:var(--gold);" class="opacity-60 group-hover:opacity-100 transition-opacity">↗</span>
+                           style="background:rgba(201,160,62,0.05); border:1px solid rgba(201,160,62,0.12);">
+                            <span><span class="text-xs font-bold mr-2" style="color:var(--gold);">03</span><span style="color:#94a3b8;">Dear Gen Z: the game hasn't changed. Only the speed has.</span></span>
+                            <span style="color:var(--gold);" class="opacity-50 group-hover:opacity-100 transition-opacity">↗</span>
                         </a>
                     </div>
                 </div>
@@ -816,22 +812,20 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center md:items-end gap-5">
-                <!-- Book cover -->
-                <div class="relative group">
-                    <img src="invisible_game_cover_vipul_kumar.png" alt="The Invisible Game — Vipul Kumar"
-                         class="w-44 rounded-xl object-cover"
-                         style="box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,160,62,0.25);
-                                transition: transform 0.3s ease, box-shadow 0.3s ease;"
-                         onmouseover="this.style.transform='scale(1.03) translateY(-4px)';this.style.boxShadow='0 35px 70px rgba(0,0,0,0.8), 0 0 0 1px rgba(201,160,62,0.4)'"
-                         onmouseout="this.style.transform='scale(1) translateY(0)';this.style.boxShadow='0 25px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,160,62,0.25)'"
-                    >
-                </div>
-                <!-- Teaser stat -->
-                <a href="https://www.linkedin.com/in/vipulk" target="_blank" rel="noopener" class="text-center hover:opacity-80 transition-opacity">
-                    <p class="text-xs uppercase tracking-wider" style="color:#475569;">3 articles published</p>
-                    <p class="text-xs mt-1" style="color:var(--gold);">#TheInvisibleGame on LinkedIn</p>
-                </a>
+            <!-- RIGHT — 3D mockup -->
+            <div class="md:col-span-2 flex items-center justify-center p-6 md:p-0 relative overflow-hidden">
+                <!-- ambient glow behind mockup -->
+                <div class="absolute inset-0 pointer-events-none"
+                     style="background:radial-gradient(ellipse at center, rgba(201,160,62,0.07) 0%, transparent 70%);"></div>
+                <img src="book_3d_mockup_table.png"
+                     alt="The Invisible Game — 3D Book Mockup"
+                     class="relative z-10 w-full max-w-sm md:max-w-none object-contain"
+                     style="filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
+                            transition: transform 0.4s ease;
+                            transform: perspective(800px) rotateY(-2deg);"
+                     onmouseover="this.style.transform='perspective(800px) rotateY(0deg) translateY(-6px)'"
+                     onmouseout="this.style.transform='perspective(800px) rotateY(-2deg) translateY(0)'"
+                >
             </div>
         </div>
     </div>
