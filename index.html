@@ -3,156 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vipul Kumar — Senior AI Data Architect</title>
-    <meta name="description" content="Senior AI Data Architect with 25+ years delivering $50M+ AI transformation programs. Builder of Kinetic Core, VoltLedger, ReSkillio, and RasoiLink.">
+    <title>Vipul Kumar — Senior AI Data Architect & AI Transformation Leader</title>
+    <meta name="description" content="Senior AI Data Architect and AI Transformation Practice Leader with 25+ years delivering $50M+ programs. Builder of Kinetic Core, VoltLedger, ReSkillio, and RasoiLink.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        * { font-family: 'Inter', sans-serif; }
+        :root {
+            --gold:       #c9a03e;
+            --gold-light: #e2bc6a;
+            --gold-dim:   rgba(201,160,62,0.15);
+            --gold-border:rgba(201,160,62,0.25);
+            --navy:       #06090f;
+            --navy-2:     #0d1117;
+            --navy-3:     #111827;
+            --navy-card:  rgba(13,17,23,0.85);
+        }
 
+        * { font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* ── hero gradient ── */
         @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50%       { background-position: 100% 50%; }
+            0%,100% { background-position: 0% 50%; }
+            50%      { background-position: 100% 50%; }
         }
-        .animated-gradient {
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0c1a2e, #160a2e);
+        .hero-bg {
+            background: linear-gradient(-45deg, #06090f, #0d1117, #0a0e1a, #070c14);
             background-size: 400% 400%;
-            animation: gradient-shift 14s ease infinite;
+            animation: gradient-shift 16s ease infinite;
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #60a5fa, #a78bfa, #34d399);
+
+        /* ── gold gradient text ── */
+        .gold-text {
+            background: linear-gradient(135deg, #e2bc6a, #c9a03e, #f0d080);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        /* ── subtle grid overlay ── */
         .grid-overlay {
             background-image:
-                linear-gradient(rgba(96,165,250,0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(96,165,250,0.06) 1px, transparent 1px);
-            background-size: 60px 60px;
+                linear-gradient(rgba(201,160,62,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201,160,62,0.04) 1px, transparent 1px);
+            background-size: 70px 70px;
         }
-        .card-glow { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .card-glow:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 40px rgba(96, 165, 250, 0.12);
-        }
+
+        /* ── nav ── */
         .nav-blur {
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(6,9,15,0.90);
+            border-bottom: 1px solid rgba(201,160,62,0.12);
         }
-        .metric-chip {
-            background: rgba(96, 165, 250, 0.08);
-            border: 1px solid rgba(96, 165, 250, 0.2);
+
+        /* ── cards ── */
+        .card {
+            background: var(--navy-card);
+            border: 1px solid rgba(201,160,62,0.12);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(201,160,62,0.35);
+            box-shadow: 0 8px 40px rgba(201,160,62,0.08);
+        }
+
+        /* ── metric chips ── */
+        .chip {
+            background: rgba(201,160,62,0.07);
+            border: 1px solid rgba(201,160,62,0.22);
+            color: #e2bc6a;
         }
         .tag {
-            background: rgba(167, 139, 250, 0.08);
-            border: 1px solid rgba(167, 139, 250, 0.18);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: #94a3b8;
         }
-        .timeline-line { position: relative; }
-        .timeline-line::before {
-            content: '';
+
+        /* ── timeline ── */
+        .timeline { position: relative; }
+        .timeline::before {
+            content:'';
             position: absolute;
             left: 0; top: 0; bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #60a5fa, #a78bfa, #34d399, #f97316);
-            border-radius: 2px;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--gold), rgba(201,160,62,0.1));
         }
+
+        /* ── scroll reveal ── */
         .reveal {
             opacity: 0;
-            transform: translateY(28px);
+            transform: translateY(24px);
             transition: opacity 0.65s ease, transform 0.65s ease;
         }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.4} }
-        .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+
+        /* ── divider ── */
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.35} }
+        .pulse-dot { animation: pulse-dot 2.5s ease-in-out infinite; }
+
+        /* ── section label ── */
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* book card special */
+        .book-card {
+            background: linear-gradient(135deg, #0d1117 0%, #110e05 100%);
+            border: 1px solid rgba(201,160,62,0.3);
+        }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 antialiased">
+<body style="background:#06090f; color:#e2e8f0;" class="antialiased">
 
-<!-- ── NAVIGATION ─────────────────────────────────────────────────────────── -->
-<nav class="fixed top-0 w-full z-50 nav-blur border-b border-slate-800/80">
+<!-- ── NAVIGATION ──────────────────────────────────────────────────────────── -->
+<nav class="fixed top-0 w-full z-50 nav-blur">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#" class="font-black text-xl tracking-tight">VK<span class="text-blue-400">.</span></a>
-        <div class="hidden md:flex gap-8 text-sm text-slate-400">
+        <a href="#" class="font-black text-xl tracking-tight" style="color:#e2bc6a;">VK<span style="color:#64748b;">.</span></a>
+        <div class="hidden md:flex gap-8 text-sm" style="color:#64748b;">
             <a href="#projects"   class="hover:text-white transition-colors">Projects</a>
             <a href="#stack"      class="hover:text-white transition-colors">Stack</a>
             <a href="#about"      class="hover:text-white transition-colors">About</a>
             <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+            <a href="#beyond"     class="hover:text-white transition-colors">Beyond Work</a>
             <a href="#contact"    class="hover:text-white transition-colors">Contact</a>
         </div>
         <a href="mailto:vk@vkdesignlabs.com"
-           class="text-sm bg-blue-600 hover:bg-blue-500 px-5 py-2 rounded-lg font-medium transition-colors">
+           style="background:var(--gold); color:#06090f;"
+           class="text-sm px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">
             Get in Touch
         </a>
     </div>
 </nav>
 
-<!-- ── HERO ───────────────────────────────────────────────────────────────── -->
-<section class="animated-gradient min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+<!-- ── HERO ────────────────────────────────────────────────────────────────── -->
+<section class="hero-bg min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
     <div class="absolute inset-0 grid-overlay"></div>
+
+    <!-- corner ornaments -->
+    <div class="absolute top-24 left-10 w-24 h-24 rounded-full opacity-5"
+         style="background:radial-gradient(circle, var(--gold), transparent);"></div>
+    <div class="absolute bottom-20 right-10 w-40 h-40 rounded-full opacity-5"
+         style="background:radial-gradient(circle, var(--gold), transparent);"></div>
+
     <div class="relative z-10 max-w-4xl">
-        <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-blue-300 text-sm mb-8">
-            <span class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></span>
+        <!-- availability badge -->
+        <div class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm mb-8"
+             style="background:rgba(201,160,62,0.08); border:1px solid rgba(201,160,62,0.22); color:#e2bc6a;">
+            <span class="w-2 h-2 rounded-full pulse-dot" style="background:#4ade80;"></span>
             Open to strategic engagements &amp; advisory roles
         </div>
-        <h1 class="text-6xl md:text-8xl font-black tracking-tight leading-none mb-4">
-            Vipul<br><span class="gradient-text">Kumar</span>
+
+        <h1 class="serif text-6xl md:text-8xl font-black tracking-tight leading-none mb-5">
+            Vipul<br><span class="gold-text">Kumar</span>
         </h1>
-        <p class="text-xl md:text-2xl text-slate-300 mb-3 font-medium">Senior AI Data Architect</p>
-        <p class="text-slate-400 max-w-2xl mx-auto mb-3 text-base">
-            Azure AI · GCP Vertex AI · Agentic AI · Data Lakehouse · GenAI / RAG
+
+        <p class="text-xl md:text-2xl font-semibold mb-2" style="color:#cbd5e1;">
+            Senior AI Data Architect
+            <span style="color:rgba(201,160,62,0.5);">&nbsp;|&nbsp;</span>
+            <span style="color:#e2bc6a;">AI Transformation Practice Lead</span>
         </p>
-        <p class="text-slate-500 text-sm mb-12">Corona, CA &nbsp;·&nbsp; Remote · Hybrid · On-site</p>
+        <p class="text-sm mb-2" style="color:#475569;">
+            Azure AI &nbsp;·&nbsp; GCP Vertex AI &nbsp;·&nbsp; Agentic AI &nbsp;·&nbsp; Data Lakehouse &nbsp;·&nbsp; GenAI / RAG
+        </p>
+        <p class="text-sm mb-12" style="color:#334155;">
+            Orange County, CA &nbsp;·&nbsp; Remote · Hybrid · On-site
+        </p>
 
         <div class="flex flex-wrap gap-4 justify-center mb-16">
             <a href="#projects"
-               class="bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-900/40">
+               style="background:var(--gold); color:#06090f;"
+               class="px-8 py-4 rounded-xl font-bold transition-all hover:opacity-90 hover:scale-105 shadow-lg">
                 View My Work
             </a>
             <a href="mailto:vk@vkdesignlabs.com"
-               class="border border-slate-600 hover:border-blue-400 hover:text-blue-300 px-8 py-4 rounded-xl font-semibold transition-all">
+               style="border:1px solid rgba(201,160,62,0.3); color:#e2bc6a;"
+               class="px-8 py-4 rounded-xl font-semibold transition-all hover:border-yellow-400">
                 vk@vkdesignlabs.com
             </a>
         </div>
 
+        <!-- stats row -->
         <div class="flex flex-wrap gap-10 justify-center">
             <div class="text-center">
-                <div class="text-4xl font-black text-blue-400">25+</div>
-                <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Years Experience</div>
+                <div class="text-4xl font-black gold-text">25+</div>
+                <div class="text-xs uppercase tracking-widest mt-1" style="color:#475569;">Years Experience</div>
             </div>
-            <div class="hidden md:block w-px bg-slate-700 self-stretch"></div>
+            <div class="hidden md:block w-px self-stretch" style="background:rgba(201,160,62,0.15);"></div>
             <div class="text-center">
-                <div class="text-4xl font-black text-violet-400">$50M+</div>
-                <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Programs Delivered</div>
+                <div class="text-4xl font-black gold-text">$50M+</div>
+                <div class="text-xs uppercase tracking-widest mt-1" style="color:#475569;">Programs Delivered</div>
             </div>
-            <div class="hidden md:block w-px bg-slate-700 self-stretch"></div>
+            <div class="hidden md:block w-px self-stretch" style="background:rgba(201,160,62,0.15);"></div>
             <div class="text-center">
-                <div class="text-4xl font-black text-emerald-400">4</div>
-                <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Live AI Products</div>
+                <div class="text-4xl font-black gold-text">4</div>
+                <div class="text-xs uppercase tracking-widest mt-1" style="color:#475569;">Live AI Products</div>
             </div>
-            <div class="hidden md:block w-px bg-slate-700 self-stretch"></div>
+            <div class="hidden md:block w-px self-stretch" style="background:rgba(201,160,62,0.15);"></div>
             <div class="text-center">
-                <div class="text-4xl font-black text-orange-400">91%</div>
-                <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Diagnostic Accuracy</div>
+                <div class="text-4xl font-black gold-text">91%</div>
+                <div class="text-xs uppercase tracking-widest mt-1" style="color:#475569;">Diagnostic Accuracy</div>
             </div>
         </div>
     </div>
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-600 flex flex-col items-center gap-2">
-        <span class="uppercase tracking-widest text-xs">Scroll</span>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style="color:#334155;">
+        <span class="text-xs uppercase tracking-widest">Scroll</span>
         <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
         </svg>
     </div>
 </section>
 
-<!-- ── PROJECTS ───────────────────────────────────────────────────────────── -->
+<!-- ── PROJECTS ─────────────────────────────────────────────────────────────── -->
 <section id="projects" class="py-28 px-6 max-w-6xl mx-auto">
     <div class="text-center mb-16 reveal">
-        <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Portfolio</p>
-        <h2 class="text-4xl md:text-5xl font-black">Deployed AI Ecosystems</h2>
-        <p class="text-slate-400 mt-4 max-w-xl mx-auto leading-relaxed">
+        <p class="section-label mb-3">Portfolio</p>
+        <h2 class="serif text-4xl md:text-5xl font-black" style="color:#f1f5f9;">Deployed AI Ecosystems</h2>
+        <div class="gold-divider w-16 mx-auto mt-5"></div>
+        <p class="mt-5 max-w-xl mx-auto leading-relaxed" style="color:#64748b;">
             Production systems at the intersection of AI, critical infrastructure, and real-world scale.
         </p>
     </div>
@@ -160,262 +240,271 @@
     <div class="grid md:grid-cols-2 gap-6">
 
         <!-- Kinetic Core -->
-        <div class="card-glow reveal bg-slate-800/50 border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full -translate-y-20 translate-x-20 pointer-events-none"></div>
+        <div class="card reveal rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 rounded-full -translate-y-20 translate-x-20 pointer-events-none"
+                 style="background:radial-gradient(circle, rgba(201,160,62,0.06), transparent);"></div>
             <div class="flex items-start justify-between mb-5">
-                <div class="w-12 h-12 bg-blue-500/15 rounded-xl flex items-center justify-center text-2xl">⚡</div>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
+                     style="background:rgba(201,160,62,0.1); border:1px solid rgba(201,160,62,0.2);">⚡</div>
                 <a href="https://kinetic-core.tech" target="_blank" rel="noopener"
-                   class="text-slate-500 hover:text-blue-400 transition-colors text-sm font-medium">Live ↗</a>
+                   class="text-sm font-medium transition-colors hover:opacity-80" style="color:var(--gold);">Live ↗</a>
             </div>
-            <h3 class="text-2xl font-bold mb-1">Kinetic Core</h3>
-            <p class="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">Autonomous Reliability for Critical Power</p>
-            <p class="text-slate-400 mb-6 leading-relaxed text-sm">
+            <h3 class="text-2xl font-bold mb-1" style="color:#f1f5f9;">Kinetic Core</h3>
+            <p class="text-xs uppercase tracking-wider font-semibold mb-4" style="color:var(--gold);">Autonomous Reliability for Critical Power</p>
+            <p class="text-sm leading-relaxed mb-6" style="color:#64748b;">
                 Fully serverless Azure-native multi-agent platform for data centers, hospitals, and industrial facilities.
-                Three AI agents (Diagnostic · Librarian · Planner) on GPT-4 + Ada-002 reasoning over IoT telemetry and
-                equipment manuals — raw telemetry to repair work order in under 2 minutes, 24/7.
-                Addresses $9k/minute cost-of-downtime and 14-hour manual diagnostic time for mid-size facilities.
+                Three AI agents (Diagnostic · Librarian · Planner) on GPT-4 + Ada-002 reasoning over IoT telemetry
+                and equipment manuals — raw telemetry to repair work order in under 2 minutes, 24/7.
+                Addresses $9k/minute cost-of-downtime and 14-hour manual diagnostic time.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-                <span class="metric-chip text-blue-300 text-xs px-3 py-1 rounded-full">91% diagnostic accuracy</span>
-                <span class="metric-chip text-blue-300 text-xs px-3 py-1 rounded-full">&lt;2 min: telemetry → work order</span>
-                <span class="metric-chip text-blue-300 text-xs px-3 py-1 rounded-full">Zero hallucinated repair steps</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">91% diagnostic accuracy</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">&lt;2 min: telemetry → work order</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">Zero hallucinated repair steps</span>
             </div>
             <div class="flex flex-wrap gap-2">
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Azure OpenAI / GPT-4</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">IoT Hub / Event Grid</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Azure AI Search</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Container Apps</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Bicep IaC</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Azure OpenAI / GPT-4</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">IoT Hub / Event Grid</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Azure AI Search</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Container Apps</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Bicep IaC</span>
             </div>
         </div>
 
         <!-- VoltLedger -->
-        <div class="card-glow reveal bg-slate-800/50 border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-40 h-40 bg-emerald-500/5 rounded-full -translate-y-20 translate-x-20 pointer-events-none"></div>
+        <div class="card reveal rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 rounded-full -translate-y-20 translate-x-20 pointer-events-none"
+                 style="background:radial-gradient(circle, rgba(201,160,62,0.06), transparent);"></div>
             <div class="flex items-start justify-between mb-5">
-                <div class="w-12 h-12 bg-emerald-500/15 rounded-xl flex items-center justify-center text-2xl">🔋</div>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
+                     style="background:rgba(201,160,62,0.1); border:1px solid rgba(201,160,62,0.2);">🔋</div>
                 <a href="https://volt-ledger.com" target="_blank" rel="noopener"
-                   class="text-slate-500 hover:text-emerald-400 transition-colors text-sm font-medium">Live ↗</a>
+                   class="text-sm font-medium transition-colors hover:opacity-80" style="color:var(--gold);">Live ↗</a>
             </div>
-            <h3 class="text-2xl font-bold mb-1">VoltLedger</h3>
-            <p class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">EV Battery Intelligence API</p>
-            <p class="text-slate-400 mb-6 leading-relaxed text-sm">
+            <h3 class="text-2xl font-bold mb-1" style="color:#f1f5f9;">VoltLedger</h3>
+            <p class="text-xs uppercase tracking-wider font-semibold mb-4" style="color:var(--gold);">EV Battery Intelligence API</p>
+            <p class="text-sm leading-relaxed mb-6" style="color:#64748b;">
                 Financial-grade EV battery risk and residual intelligence for lenders, insurers, and fleet operators.
-                Composite 0–1000 risk index (5 sub-scores), A–F grading, 60-month residual value forecasting, LTV
-                recommendations with risk premium in basis points, and second-life viability pathway — 142ms median latency.
-                EU Battery Passport-ready for 2027 mandate, opening €2B+ European market.
+                Composite 0–1000 risk index (5 sub-scores), A–F grading, 60-month residual value forecasting,
+                LTV recommendations with risk premium in basis points, and second-life viability pathway.
+                EU Battery Passport-ready for the 2027 mandate.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-                <span class="metric-chip text-emerald-300 text-xs px-3 py-1 rounded-full">142ms median API latency</span>
-                <span class="metric-chip text-emerald-300 text-xs px-3 py-1 rounded-full">500K+ API calls/month at launch</span>
-                <span class="metric-chip text-emerald-300 text-xs px-3 py-1 rounded-full">EU Battery Passport-ready</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">142ms median API latency</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">500K+ API calls/month</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">EU Battery Passport-ready</span>
             </div>
             <div class="flex flex-wrap gap-2">
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">GCP Cloud Run</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Next.js 14</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Fastify / TypeScript</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">PostgreSQL / Prisma</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Stripe</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">GCP Cloud Run</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Next.js 14</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Fastify / TypeScript</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">PostgreSQL / Prisma</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Stripe</span>
             </div>
         </div>
 
         <!-- ReSkillio -->
-        <div class="card-glow reveal bg-slate-800/50 border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-40 h-40 bg-violet-500/5 rounded-full -translate-y-20 translate-x-20 pointer-events-none"></div>
+        <div class="card reveal rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 rounded-full -translate-y-20 translate-x-20 pointer-events-none"
+                 style="background:radial-gradient(circle, rgba(201,160,62,0.06), transparent);"></div>
             <div class="flex items-start justify-between mb-5">
-                <div class="w-12 h-12 bg-violet-500/15 rounded-xl flex items-center justify-center text-2xl">🎯</div>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
+                     style="background:rgba(201,160,62,0.1); border:1px solid rgba(201,160,62,0.2);">🎯</div>
                 <a href="https://reskillio.com" target="_blank" rel="noopener"
-                   class="text-slate-500 hover:text-violet-400 transition-colors text-sm font-medium">Live ↗</a>
+                   class="text-sm font-medium transition-colors hover:opacity-80" style="color:var(--gold);">Live ↗</a>
             </div>
-            <h3 class="text-2xl font-bold mb-1">ReSkillio</h3>
-            <p class="text-violet-400 text-xs font-semibold uppercase tracking-wider mb-4">AI Workforce Intelligence Platform</p>
-            <p class="text-slate-400 mb-6 leading-relaxed text-sm">
+            <h3 class="text-2xl font-bold mb-1" style="color:#f1f5f9;">ReSkillio</h3>
+            <p class="text-xs uppercase tracking-wider font-semibold mb-4" style="color:var(--gold);">AI Workforce Intelligence Platform</p>
+            <p class="text-sm leading-relaxed mb-6" style="color:#64748b;">
                 Enterprise-grade AI career intelligence platform. Upload a resume: get a 5-stage pipeline delivering
-                200+ extracted skills via spaCy NLP, vector-based gap scoring against 8 industry centroids, a
-                Gemini-written career narrative, 90-day reskilling roadmap, and a live opportunity radar for
-                fractional, consulting, and advisory roles. 40–60% improvement in role-fit accuracy across 100K+ profiles.
+                200+ extracted skills via spaCy NLP, vector-based gap scoring against 8 industry centroids,
+                a Gemini-written career narrative, 90-day reskilling roadmap, and a live opportunity radar
+                for fractional, consulting, and advisory roles.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-                <span class="metric-chip text-violet-300 text-xs px-3 py-1 rounded-full">40–60% role-fit accuracy gain</span>
-                <span class="metric-chip text-violet-300 text-xs px-3 py-1 rounded-full">100K+ candidate profiles</span>
-                <span class="metric-chip text-violet-300 text-xs px-3 py-1 rounded-full">768-dim Vertex AI embeddings</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">40–60% role-fit accuracy gain</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">100K+ candidate profiles</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">768-dim Vertex AI embeddings</span>
             </div>
             <div class="flex flex-wrap gap-2">
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Vertex AI / Gemini 2.5</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">BigQuery Medallion</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">LangGraph / CrewAI</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">FastAPI / spaCy</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Cloud Run</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Vertex AI / Gemini 2.5</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">BigQuery Medallion</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">LangGraph / CrewAI</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">FastAPI / spaCy</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Cloud Run</span>
             </div>
         </div>
 
         <!-- RasoiLink -->
-        <div class="card-glow reveal bg-slate-800/50 border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-40 h-40 bg-orange-500/5 rounded-full -translate-y-20 translate-x-20 pointer-events-none"></div>
+        <div class="card reveal rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 rounded-full -translate-y-20 translate-x-20 pointer-events-none"
+                 style="background:radial-gradient(circle, rgba(201,160,62,0.06), transparent);"></div>
             <div class="flex items-start justify-between mb-5">
-                <div class="w-12 h-12 bg-orange-500/15 rounded-xl flex items-center justify-center text-2xl">🍛</div>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
+                     style="background:rgba(201,160,62,0.1); border:1px solid rgba(201,160,62,0.2);">🍛</div>
                 <a href="https://rasoilink.com" target="_blank" rel="noopener"
-                   class="text-slate-500 hover:text-orange-400 transition-colors text-sm font-medium">Live ↗</a>
+                   class="text-sm font-medium transition-colors hover:opacity-80" style="color:var(--gold);">Live ↗</a>
             </div>
-            <h3 class="text-2xl font-bold mb-1">RasoiLink</h3>
-            <p class="text-orange-400 text-xs font-semibold uppercase tracking-wider mb-4">Multilingual AI Talent Marketplace</p>
-            <p class="text-slate-400 mb-6 leading-relaxed text-sm">
+            <h3 class="text-2xl font-bold mb-1" style="color:#f1f5f9;">RasoiLink</h3>
+            <p class="text-xs uppercase tracking-wider font-semibold mb-4" style="color:var(--gold);">Multilingual AI Talent Marketplace</p>
+            <p class="text-sm leading-relaxed mb-6" style="color:#64748b;">
                 Voice-first multilingual NLP matching platform for the Indian restaurant ecosystem across the US.
-                RAG-style retrieval with FAISS vector embeddings matches workers and restaurant owners across 9 dimensions
-                in 8 Indian languages + English — WhatsApp-native, GCP-hosted, 50K+ active users.
+                RAG-style retrieval with FAISS vector embeddings matches workers and restaurant owners across
+                9 dimensions in 8 Indian languages + English — WhatsApp-native, GCP-hosted, 50K+ active users.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-                <span class="metric-chip text-orange-300 text-xs px-3 py-1 rounded-full">50K+ active users</span>
-                <span class="metric-chip text-orange-300 text-xs px-3 py-1 rounded-full">8 Indian languages + English</span>
-                <span class="metric-chip text-orange-300 text-xs px-3 py-1 rounded-full">Voice-first WhatsApp-native</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">50K+ active users</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">8 Indian languages + English</span>
+                <span class="chip text-xs px-3 py-1 rounded-full">Voice-first · WhatsApp-native</span>
             </div>
             <div class="flex flex-wrap gap-2">
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">GCP</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">FAISS Vector Search</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">Fastify / TypeScript</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">React Native / Expo</span>
-                <span class="tag text-violet-300 text-xs px-2 py-1 rounded-md">PostgreSQL</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">GCP</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">FAISS Vector Search</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">Fastify / TypeScript</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">React Native / Expo</span>
+                <span class="tag text-xs px-2 py-1 rounded-md">PostgreSQL</span>
             </div>
         </div>
 
     </div>
 </section>
 
-<!-- ── TECH STACK ─────────────────────────────────────────────────────────── -->
-<section id="stack" class="py-28 px-6 bg-slate-800/25 border-y border-slate-800">
+<div class="gold-divider max-w-6xl mx-auto opacity-30"></div>
+
+<!-- ── TECH STACK ────────────────────────────────────────────────────────────── -->
+<section id="stack" class="py-28 px-6" style="background:#07090e;">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16 reveal">
-            <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Technology</p>
-            <h2 class="text-4xl md:text-5xl font-black">The Architect's Stack</h2>
-            <p class="text-slate-400 mt-4 max-w-xl mx-auto">Every layer chosen for production reliability, not demo day.</p>
+            <p class="section-label mb-3">Technology</p>
+            <h2 class="serif text-4xl md:text-5xl font-black" style="color:#f1f5f9;">The Architect's Stack</h2>
+            <div class="gold-divider w-16 mx-auto mt-5"></div>
+            <p class="mt-5 max-w-xl mx-auto" style="color:#64748b;">Every layer chosen for production reliability, not demo day.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 reveal">
-            <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
-                <div class="text-blue-400 font-bold text-xs uppercase tracking-wider mb-5">AI &amp; GenAI</div>
-                <ul class="space-y-2">
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>Azure OpenAI / GPT-4</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>GCP Vertex AI / Gemini</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>LangChain · LangGraph · CrewAI</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>RAG / Vector Search</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>FAISS · Pinecone · ChromaDB</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>spaCy NLP · HuggingFace</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0 mt-1.5"></span>AutoGen · Prompt Engineering</li>
+            <div class="card rounded-xl p-6">
+                <div class="font-bold text-xs uppercase tracking-wider mb-5" style="color:var(--gold);">AI &amp; GenAI</div>
+                <ul class="space-y-2.5">
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Azure OpenAI / GPT-4</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>GCP Vertex AI / Gemini</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>LangChain · LangGraph · CrewAI</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>RAG / Vector Search</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>FAISS · Pinecone · ChromaDB</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>spaCy NLP · HuggingFace</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>AutoGen · Prompt Engineering</li>
                 </ul>
             </div>
-            <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
-                <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-5">Cloud &amp; MLOps</div>
-                <ul class="space-y-2">
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Azure IoT Hub / Event Grid</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Azure AI Search / CosmosDB</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>GCP BigQuery / BigLake</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Vertex AI Pipelines</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Medallion Architecture</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>Model Registry &amp; Drift Monitor</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-1.5"></span>AWS (SageMaker · S3 · Lambda)</li>
+            <div class="card rounded-xl p-6">
+                <div class="font-bold text-xs uppercase tracking-wider mb-5" style="color:var(--gold);">Cloud &amp; MLOps</div>
+                <ul class="space-y-2.5">
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Azure IoT Hub / Event Grid</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Azure AI Search / CosmosDB</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>GCP BigQuery / BigLake</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Vertex AI Pipelines</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Medallion Architecture</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Model Registry &amp; Drift Monitor</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>AWS (SageMaker · S3 · Lambda)</li>
                 </ul>
             </div>
-            <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
-                <div class="text-violet-400 font-bold text-xs uppercase tracking-wider mb-5">Backend &amp; Data</div>
-                <ul class="space-y-2">
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>FastAPI / Python 3.12</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>Fastify / TypeScript</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>PostgreSQL / Prisma</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>Redis / BullMQ</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>PySpark · Apache Beam</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>MLflow · Data Mesh</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0 mt-1.5"></span>TensorFlow · PyTorch · ONNX</li>
+            <div class="card rounded-xl p-6">
+                <div class="font-bold text-xs uppercase tracking-wider mb-5" style="color:var(--gold);">Backend &amp; Data</div>
+                <ul class="space-y-2.5">
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>FastAPI / Python 3.12</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Fastify / TypeScript</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>PostgreSQL / Prisma</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Redis / BullMQ</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>PySpark · Apache Beam</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>MLflow · Data Mesh</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>TensorFlow · PyTorch · ONNX</li>
                 </ul>
             </div>
-            <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-6">
-                <div class="text-orange-400 font-bold text-xs uppercase tracking-wider mb-5">Frontend &amp; DevOps</div>
-                <ul class="space-y-2">
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Next.js 14 / React 18</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>React Native / Expo</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Tailwind CSS</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>GitHub Actions CI/CD</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Bicep IaC / Terraform</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Docker / Railway</li>
-                    <li class="text-slate-300 text-sm flex gap-2"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0 mt-1.5"></span>Turborepo / pnpm</li>
+            <div class="card rounded-xl p-6">
+                <div class="font-bold text-xs uppercase tracking-wider mb-5" style="color:var(--gold);">Frontend &amp; DevOps</div>
+                <ul class="space-y-2.5">
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Next.js 14 / React 18</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>React Native / Expo</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Tailwind CSS</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>GitHub Actions CI/CD</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Bicep IaC / Terraform</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Docker / Railway</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Turborepo / pnpm</li>
                 </ul>
             </div>
         </div>
 
         <!-- Certifications -->
-        <div class="mt-10 reveal bg-slate-800/50 border border-slate-700 rounded-xl p-7">
-            <div class="text-blue-400 font-bold text-xs uppercase tracking-wider mb-5">Certifications</div>
+        <div class="mt-8 reveal card rounded-xl p-7">
+            <div class="font-bold text-xs uppercase tracking-wider mb-5" style="color:var(--gold);">Certifications</div>
             <div class="flex flex-wrap gap-3">
-                <span class="bg-blue-500/10 border border-blue-500/20 text-blue-200 text-sm px-4 py-2 rounded-lg font-medium">Azure AI Engineer Associate</span>
-                <span class="bg-orange-500/10 border border-orange-500/20 text-orange-200 text-sm px-4 py-2 rounded-lg font-medium">AWS Solutions Architect Associate</span>
-                <span class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-200 text-sm px-4 py-2 rounded-lg font-medium">GCP Professional Data Engineer</span>
-                <span class="bg-violet-500/10 border border-violet-500/20 text-violet-200 text-sm px-4 py-2 rounded-lg font-medium">GCP Professional ML Engineer <span class="opacity-60 text-xs">(in progress · 2026)</span></span>
+                <span class="text-sm px-4 py-2 rounded-lg font-medium" style="background:rgba(201,160,62,0.08); border:1px solid rgba(201,160,62,0.2); color:#e2bc6a;">Azure AI Engineer Associate</span>
+                <span class="text-sm px-4 py-2 rounded-lg font-medium" style="background:rgba(201,160,62,0.08); border:1px solid rgba(201,160,62,0.2); color:#e2bc6a;">AWS Solutions Architect Associate</span>
+                <span class="text-sm px-4 py-2 rounded-lg font-medium" style="background:rgba(201,160,62,0.08); border:1px solid rgba(201,160,62,0.2); color:#e2bc6a;">GCP Professional Data Engineer</span>
+                <span class="text-sm px-4 py-2 rounded-lg font-medium" style="background:rgba(201,160,62,0.06); border:1px solid rgba(201,160,62,0.14); color:#94a3b8;">GCP Professional ML Engineer <span class="text-xs opacity-60">· in progress · 2026</span></span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ── ABOUT ───────────────────────────────────────────────────────────────── -->
+<div class="gold-divider max-w-6xl mx-auto opacity-30"></div>
+
+<!-- ── ABOUT ──────────────────────────────────────────────────────────────────── -->
 <section id="about" class="py-28 px-6 max-w-6xl mx-auto">
     <div class="grid md:grid-cols-5 gap-16 items-center">
         <div class="md:col-span-3 reveal">
-            <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">About</p>
-            <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">
+            <p class="section-label mb-3">About</p>
+            <h2 class="serif text-4xl md:text-5xl font-black mb-8 leading-tight" style="color:#f1f5f9;">
                 The Bridge Between<br>
-                <span class="gradient-text">Vision &amp; Production</span>
+                <span class="gold-text">Vision &amp; Production</span>
             </h2>
-            <div class="space-y-5 text-slate-300 leading-relaxed">
+            <div class="space-y-5 leading-relaxed" style="color:#94a3b8;">
                 <p>
                     With over 25 years of experience across manufacturing, energy, critical power, logistics, healthcare,
                     and financial services, I architect AI operating systems for the physical world.
-                    From scaling <strong class="text-white">$50M+ transformation programs</strong> at Fortune 500 enterprises
-                    to founder-led ventures solving real problems in EV finance, workforce intelligence, and
-                    critical infrastructure reliability.
+                    From scaling <strong style="color:#e2e8f0;">$50M+ transformation programs</strong> at Fortune 500 enterprises
+                    to founder-led ventures solving real problems in EV finance, workforce intelligence,
+                    and critical infrastructure reliability.
                 </p>
-                <p class="text-slate-400">
-                    My engineering philosophy is grounded in the <strong class="text-slate-200">Medallion Architecture</strong> principle:
+                <p>
+                    My engineering philosophy is grounded in the <strong style="color:#e2e8f0;">Medallion Architecture</strong> principle:
                     raw data is worthless until it flows through bronze, silver, and gold layers into deterministic,
                     auditable, production-ready intelligence. Every system I build must be observable,
-                    hallucination-guarded, and drift-monitored in production — not just accurate in a notebook.
+                    hallucination-guarded, and drift-monitored — not just accurate in a notebook.
                 </p>
-                <p class="text-slate-400">
-                    I've led teams of 10–40 engineers, presented reference architectures to CXO and board-level stakeholders
-                    at 12+ Fortune 500 clients, and closed $30M+ in multi-year AI engagements. The track record is
-                    20–60% productivity and decision-cycle gains across every vertical I've touched.
-                </p>
-                <p class="text-slate-400">
-                    Beyond the code — shaped by running a restaurant and decades of enterprise leadership, I understand
-                    that in critical infrastructure, "zero downtime" is not a goal. It's a requirement.
+                <p>
+                    I've led teams of 10–40 engineers, presented reference architectures to CXO and board-level
+                    stakeholders at 12+ Fortune 500 clients, and closed $30M+ in multi-year AI engagements.
+                    The track record: 20–60% productivity and decision-cycle gains across every vertical I've touched.
                 </p>
             </div>
         </div>
         <div class="md:col-span-2 reveal">
             <div class="grid grid-cols-2 gap-4">
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center">
-                    <div class="text-3xl font-black text-blue-400 mb-1">25+</div>
-                    <div class="text-slate-400 text-xs uppercase tracking-wider">Years in Tech</div>
+                <div class="card rounded-xl p-6 text-center">
+                    <div class="text-3xl font-black gold-text mb-1">25+</div>
+                    <div class="text-xs uppercase tracking-wider" style="color:#475569;">Years in Tech</div>
                 </div>
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center">
-                    <div class="text-3xl font-black text-violet-400 mb-1">4</div>
-                    <div class="text-slate-400 text-xs uppercase tracking-wider">Live AI Products</div>
+                <div class="card rounded-xl p-6 text-center">
+                    <div class="text-3xl font-black gold-text mb-1">4</div>
+                    <div class="text-xs uppercase tracking-wider" style="color:#475569;">Live AI Products</div>
                 </div>
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center">
-                    <div class="text-3xl font-black text-emerald-400 mb-1">$50M+</div>
-                    <div class="text-slate-400 text-xs uppercase tracking-wider">Programs Delivered</div>
+                <div class="card rounded-xl p-6 text-center">
+                    <div class="text-3xl font-black gold-text mb-1">$50M+</div>
+                    <div class="text-xs uppercase tracking-wider" style="color:#475569;">Programs Delivered</div>
                 </div>
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center">
-                    <div class="text-3xl font-black text-orange-400 mb-1">40+</div>
-                    <div class="text-slate-400 text-xs uppercase tracking-wider">Engineers Led</div>
+                <div class="card rounded-xl p-6 text-center">
+                    <div class="text-3xl font-black gold-text mb-1">40+</div>
+                    <div class="text-xs uppercase tracking-wider" style="color:#475569;">Engineers Led</div>
                 </div>
-                <div class="col-span-2 bg-slate-800 border border-blue-500/20 rounded-xl p-6">
-                    <div class="text-blue-400 text-xs uppercase tracking-wider font-semibold mb-3">Specializations</div>
+                <div class="col-span-2 card rounded-xl p-6">
+                    <div class="font-bold text-xs uppercase tracking-wider mb-3" style="color:var(--gold);">Specializations</div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">Agentic AI</span>
-                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">RAG Architecture</span>
-                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">Industrial IoT</span>
-                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">Data Lakehouse</span>
-                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">MLOps</span>
-                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">AI Governance</span>
-                        <span class="bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-md">FinOps</span>
+                        <span class="chip text-xs px-2 py-1 rounded-md">Agentic AI</span>
+                        <span class="chip text-xs px-2 py-1 rounded-md">RAG Architecture</span>
+                        <span class="chip text-xs px-2 py-1 rounded-md">Industrial IoT</span>
+                        <span class="chip text-xs px-2 py-1 rounded-md">Data Lakehouse</span>
+                        <span class="chip text-xs px-2 py-1 rounded-md">MLOps</span>
+                        <span class="chip text-xs px-2 py-1 rounded-md">AI Governance</span>
+                        <span class="chip text-xs px-2 py-1 rounded-md">FinOps</span>
                     </div>
                 </div>
             </div>
@@ -423,117 +512,103 @@
     </div>
 </section>
 
-<!-- ── EXPERIENCE ─────────────────────────────────────────────────────────── -->
-<section id="experience" class="py-28 px-6 bg-slate-800/25 border-y border-slate-800">
+<div class="gold-divider max-w-6xl mx-auto opacity-30"></div>
+
+<!-- ── EXPERIENCE ────────────────────────────────────────────────────────────── -->
+<section id="experience" class="py-28 px-6" style="background:#07090e;">
     <div class="max-w-3xl mx-auto">
         <div class="text-center mb-16 reveal">
-            <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Career</p>
-            <h2 class="text-4xl md:text-5xl font-black">Experience</h2>
+            <p class="section-label mb-3">Career</p>
+            <h2 class="serif text-4xl md:text-5xl font-black" style="color:#f1f5f9;">Experience</h2>
+            <div class="gold-divider w-16 mx-auto mt-5"></div>
         </div>
 
-        <div class="relative pl-10 timeline-line space-y-7">
+        <div class="relative pl-10 timeline space-y-7">
 
-            <!-- VKDesignLabs -->
             <div class="reveal relative">
-                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-blue-500 border-4 border-slate-900 shadow-lg shadow-blue-500/30"></div>
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-7">
+                <div class="absolute -left-[41px] top-5 w-4 h-4 rounded-full border-2"
+                     style="background:var(--gold); border-color:#07090e; box-shadow:0 0 12px rgba(201,160,62,0.4);"></div>
+                <div class="card rounded-xl p-7">
                     <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
-                        <h3 class="text-lg font-bold">Founder &amp; Senior AI Data Architect</h3>
-                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2023 – Present</span>
+                        <h3 class="text-lg font-bold" style="color:#f1f5f9;">Founder &amp; Senior AI Data Architect</h3>
+                        <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(201,160,62,0.08); color:var(--gold);">2023 – Present</span>
                     </div>
-                    <p class="text-blue-400 text-sm font-medium mb-3">VKDesignLabs — Enterprise AI Consulting</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-sm font-semibold mb-3" style="color:var(--gold);">VKDesignLabs — Enterprise AI Consulting</p>
+                    <p class="text-sm leading-relaxed" style="color:#64748b;">
                         Designs end-to-end AI operating systems for industrial and critical infrastructure enterprises.
                         Leads engagements of 10–15 data engineers across $5M–$50M+ programs on Azure and GCP.
-                        Shipped four production AI products (Kinetic Core, VoltLedger, ReSkillio, RasoiLink).
-                        Achieved 40–60% productivity gains and 30–60% faster decision cycles for clients across
-                        manufacturing, energy, and logistics verticals. 20–30% cloud AI cost reduction via FinOps frameworks.
+                        Shipped four production AI products. Achieved 40–60% productivity gains and 30–60% faster
+                        decision cycles across manufacturing, energy, and logistics. 20–30% cloud AI cost reduction via FinOps.
                     </p>
                 </div>
             </div>
 
-            <!-- Birlasoft GPD -->
             <div class="reveal relative">
-                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-violet-500 border-4 border-slate-900 shadow-lg shadow-violet-500/30"></div>
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-7">
+                <div class="absolute -left-[41px] top-5 w-4 h-4 rounded-full border-2"
+                     style="background:#374151; border-color:#07090e;"></div>
+                <div class="card rounded-xl p-7">
                     <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
-                        <h3 class="text-lg font-bold">Global Practice Director — Product &amp; Technology Innovation</h3>
-                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2021 – 2023</span>
+                        <h3 class="text-lg font-bold" style="color:#f1f5f9;">Global Practice Director — Product &amp; Technology Innovation</h3>
+                        <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(201,160,62,0.06); color:#64748b;">2021 – 2023</span>
                     </div>
-                    <p class="text-violet-400 text-sm font-medium mb-3">Birlasoft</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Led global AI/ML innovation labs with 40+ engineers and data scientists across India, US, and UK.
-                        Founded and scaled AI/ML innovation labs; generated $15M+ in new practice revenue.
-                        Architected AI platforms serving 10M+ daily transactions. Directed cloud modernization of 1,000+ workloads
-                        — $4M+ annual infrastructure savings. Closed $30M+ in multi-year AI engagements with Fortune 500 CXOs.
+                    <p class="text-sm font-semibold mb-3" style="color:var(--gold);">Birlasoft</p>
+                    <p class="text-sm leading-relaxed" style="color:#64748b;">
+                        Led global AI/ML innovation labs with 40+ engineers across India, US, and UK. Generated $15M+
+                        in new practice revenue. Architected AI platforms serving 10M+ daily transactions. Directed
+                        cloud modernization of 1,000+ workloads — $4M+ annual savings. Closed $30M+ in multi-year AI
+                        engagements with Fortune 500 CXOs.
                     </p>
                 </div>
             </div>
 
-            <!-- Birlasoft ISA -->
             <div class="reveal relative">
-                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-emerald-500 border-4 border-slate-900 shadow-lg shadow-emerald-500/30"></div>
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-7">
+                <div class="absolute -left-[41px] top-5 w-4 h-4 rounded-full border-2"
+                     style="background:#374151; border-color:#07090e;"></div>
+                <div class="card rounded-xl p-7">
                     <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
-                        <h3 class="text-lg font-bold">Innovation &amp; Systems Architect — Industrial AI</h3>
-                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2019 – 2021</span>
+                        <h3 class="text-lg font-bold" style="color:#f1f5f9;">Innovation &amp; Systems Architect — Industrial AI</h3>
+                        <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(201,160,62,0.06); color:#64748b;">2019 – 2021</span>
                     </div>
-                    <p class="text-emerald-400 text-sm font-medium mb-3">Birlasoft</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Architected Industrial IoT sensor fusion platforms processing 2TB+/day across 5 regulated manufacturing
-                        plants on 3 continents. Computer vision defect detection: 25%+ accuracy improvement, $8M/year quality-cost reduction.
-                        Edge-cloud AI at sub-50ms inference latency across 200+ edge nodes. Reduced operator onboarding from 12 weeks to 5 weeks.
+                    <p class="text-sm font-semibold mb-3" style="color:var(--gold);">Birlasoft</p>
+                    <p class="text-sm leading-relaxed" style="color:#64748b;">
+                        Architected Industrial IoT sensor fusion platforms processing 2TB+/day across 5 regulated
+                        manufacturing plants on 3 continents. Computer vision defect detection: 25%+ accuracy improvement,
+                        $8M/year quality-cost reduction. Sub-50ms edge inference across 200+ nodes.
                     </p>
                 </div>
             </div>
 
-            <!-- KPIT -->
             <div class="reveal relative">
-                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-orange-400 border-4 border-slate-900 shadow-lg shadow-orange-400/30"></div>
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-7">
+                <div class="absolute -left-[41px] top-5 w-4 h-4 rounded-full border-2"
+                     style="background:#374151; border-color:#07090e;"></div>
+                <div class="card rounded-xl p-7">
                     <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
-                        <h3 class="text-lg font-bold">Product Owner — Enterprise AR/VR &amp; Wearables</h3>
-                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2014 – 2018</span>
+                        <h3 class="text-lg font-bold" style="color:#f1f5f9;">Product Owner — Enterprise AR/VR &amp; Wearables</h3>
+                        <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(201,160,62,0.06); color:#64748b;">2014 – 2018</span>
                     </div>
-                    <p class="text-orange-400 text-sm font-medium mb-3">KPIT Technologies</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Incubated and scaled enterprise AR/VR and wearable computing platform (HoloLens, Vuzix, Unity3D, OpenCV)
-                        from 0 to $12M ARR across 15+ global industrial clients. AI-assisted field maintenance reduced MTTR by 40%.
-                        92% gross retention on per-device SaaS + professional services model.
+                    <p class="text-sm font-semibold mb-3" style="color:var(--gold);">KPIT Technologies</p>
+                    <p class="text-sm leading-relaxed" style="color:#64748b;">
+                        Incubated and scaled enterprise AR/VR and wearable computing platform from 0 to $12M ARR
+                        across 15+ global industrial clients. AI-assisted field maintenance reduced MTTR by 40%.
+                        92% gross retention on per-device SaaS model.
                     </p>
                 </div>
             </div>
 
-            <!-- Earlier leadership -->
             <div class="reveal relative">
-                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full bg-slate-500 border-4 border-slate-900"></div>
-                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-7">
+                <div class="absolute -left-[41px] top-5 w-4 h-4 rounded-full border-2"
+                     style="background:#1f2937; border-color:#07090e;"></div>
+                <div class="card rounded-xl p-7" style="border-color:rgba(201,160,62,0.06);">
                     <div class="flex flex-wrap justify-between items-start gap-2 mb-4">
-                        <h3 class="text-lg font-bold text-slate-300">Earlier Leadership</h3>
-                        <span class="text-slate-500 text-sm bg-slate-700/50 px-3 py-1 rounded-full">2000 – 2014</span>
+                        <h3 class="text-base font-bold" style="color:#94a3b8;">Earlier Leadership</h3>
+                        <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(255,255,255,0.03); color:#475569;">2000 – 2014</span>
                     </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-300 font-medium">CTO / SVP — <span class="text-slate-400 font-normal">GEPL Capital</span></span>
-                            <span class="text-slate-500">2010 – 2014</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-300 font-medium">SVP Technology — <span class="text-slate-400 font-normal">Anand Rathi Securities</span></span>
-                            <span class="text-slate-500">2007 – 2010</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-300 font-medium">Senior Architect — <span class="text-slate-400 font-normal">Synechron</span></span>
-                            <span class="text-slate-500">2004 – 2007</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-300 font-medium">Systems Engineer — <span class="text-slate-400 font-normal">KPIT / IPCS</span></span>
-                            <span class="text-slate-500">2000 – 2004</span>
-                        </div>
+                    <div class="space-y-2.5">
+                        <div class="flex justify-between text-sm"><span style="color:#64748b;">CTO / SVP — <span style="color:#475569;">GEPL Capital</span></span><span style="color:#374151;">2010–2014</span></div>
+                        <div class="flex justify-between text-sm"><span style="color:#64748b;">SVP Technology — <span style="color:#475569;">Anand Rathi Securities</span></span><span style="color:#374151;">2007–2010</span></div>
+                        <div class="flex justify-between text-sm"><span style="color:#64748b;">Senior Architect — <span style="color:#475569;">Synechron</span></span><span style="color:#374151;">2004–2007</span></div>
+                        <div class="flex justify-between text-sm"><span style="color:#64748b;">Systems Engineer — <span style="color:#475569;">KPIT / IPCS</span></span><span style="color:#374151;">2000–2004</span></div>
                     </div>
-                    <p class="text-slate-500 text-xs mt-4 leading-relaxed">
-                        Financial services platforms, enterprise systems, and large-scale infrastructure modernization across
-                        capital markets, securities trading, and fintech.
-                    </p>
                 </div>
             </div>
 
@@ -541,73 +616,200 @@
 
         <!-- Education -->
         <div class="mt-14 reveal">
-            <p class="text-blue-400 text-xs font-semibold uppercase tracking-widest mb-5">Education</p>
+            <p class="section-label mb-5">Education</p>
             <div class="grid sm:grid-cols-2 gap-4">
-                <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
-                    <p class="text-white font-semibold text-sm">MBA, International Business</p>
-                    <p class="text-slate-400 text-sm mt-1">Symbiosis University, India</p>
+                <div class="card rounded-xl p-5">
+                    <p class="font-semibold text-sm" style="color:#e2e8f0;">MBA, International Business</p>
+                    <p class="text-sm mt-1" style="color:#475569;">Symbiosis University, India</p>
                 </div>
-                <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
-                    <p class="text-white font-semibold text-sm">B.E., Electrical &amp; Electronics Engineering</p>
-                    <p class="text-slate-400 text-sm mt-1">Bangalore University, India</p>
+                <div class="card rounded-xl p-5">
+                    <p class="font-semibold text-sm" style="color:#e2e8f0;">B.E., Electrical &amp; Electronics Engineering</p>
+                    <p class="text-sm mt-1" style="color:#475569;">Bangalore University, India</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ── CONTACT ────────────────────────────────────────────────────────────── -->
-<section id="contact" class="py-28 px-6 max-w-4xl mx-auto text-center">
-    <div class="reveal">
-        <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Let's Build</p>
-        <h2 class="text-4xl md:text-5xl font-black mb-6">
-            Ready to Architect<br>
-            <span class="gradient-text">Something Real?</span>
-        </h2>
-        <p class="text-slate-400 max-w-lg mx-auto mb-12 text-lg leading-relaxed">
-            Open to strategic consulting, advisory roles, and fractional CTO engagements in
-            AI systems, industrial IoT, and data architecture.
-        </p>
-        <div class="flex flex-wrap gap-4 justify-center mb-10">
-            <a href="mailto:vk@vkdesignlabs.com"
-               class="bg-blue-600 hover:bg-blue-500 px-10 py-4 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-900/40 text-lg">
-                vk@vkdesignlabs.com
-            </a>
-            <a href="https://linkedin.com/in/vipulk" target="_blank" rel="noopener"
-               class="border border-slate-600 hover:border-blue-400 hover:text-blue-300 px-10 py-4 rounded-xl font-semibold transition-all text-lg">
-                LinkedIn ↗
-            </a>
-            <a href="https://github.com/vipul9811kumar" target="_blank" rel="noopener"
-               class="border border-slate-600 hover:border-slate-400 hover:text-slate-200 px-10 py-4 rounded-xl font-semibold transition-all text-lg">
-                GitHub ↗
-            </a>
+<div class="gold-divider max-w-6xl mx-auto opacity-30"></div>
+
+<!-- ── BEYOND WORK ────────────────────────────────────────────────────────────── -->
+<section id="beyond" class="py-28 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+        <p class="section-label mb-3">Beyond Work</p>
+        <h2 class="serif text-4xl md:text-5xl font-black" style="color:#f1f5f9;">The Person Behind the Architect</h2>
+        <div class="gold-divider w-16 mx-auto mt-5"></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+
+        <div class="card reveal rounded-2xl p-7">
+            <div class="text-3xl mb-4">🏛️</div>
+            <h3 class="text-lg font-bold mb-3" style="color:#f1f5f9;">The 2008 Lesson</h3>
+            <p class="text-sm leading-relaxed" style="color:#64748b;">
+                I was the youngest CTO at one of India's top corporate finance firms. Then my sponsor left,
+                I honoured a loyalty the organisation had already decided to punish — and I lost the role.
+                Not through confrontation. Through a series of quiet, invisible moves I only understood in hindsight.
+                That experience became the foundation of everything I've built since.
+            </p>
         </div>
-        <p class="text-slate-500 text-sm">Corona, CA &nbsp;·&nbsp; 919-903-4693 &nbsp;·&nbsp; Remote · Hybrid · On-site</p>
+
+        <div class="card reveal rounded-2xl p-7">
+            <div class="text-3xl mb-4">🍽️</div>
+            <h3 class="text-lg font-bold mb-3" style="color:#f1f5f9;">From the Kitchen to the Cloud</h3>
+            <p class="text-sm leading-relaxed" style="color:#64748b;">
+                Before architecting AI systems, I ran a restaurant — where zero downtime wasn't a KPI,
+                it was survival. That experience taught me more about operations under pressure,
+                trust, and systems thinking than any enterprise engagement. It's also the lived
+                experience behind RasoiLink.
+            </p>
+        </div>
+
+        <div class="card reveal rounded-2xl p-7">
+            <div class="text-3xl mb-4">🌏</div>
+            <h3 class="text-lg font-bold mb-3" style="color:#f1f5f9;">Two Worlds, One Lens</h3>
+            <p class="text-sm leading-relaxed" style="color:#64748b;">
+                Raised in India, building in America — across capital markets in Mumbai, manufacturing plants
+                on three continents, and startup offices in Orange County. That dual vantage point shapes
+                every platform I design: systems that work for real people, in their language,
+                under real-world pressure.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Book section -->
+    <div class="book-card reveal rounded-2xl p-10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 rounded-full -translate-y-32 translate-x-32 pointer-events-none"
+             style="background:radial-gradient(circle, rgba(201,160,62,0.1), transparent);"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full translate-y-24 -translate-x-24 pointer-events-none"
+             style="background:radial-gradient(circle, rgba(201,160,62,0.05), transparent);"></div>
+
+        <div class="grid md:grid-cols-3 gap-10 items-start relative z-10">
+            <div class="md:col-span-2">
+                <p class="section-label mb-3">Forthcoming Book</p>
+                <h3 class="serif text-3xl md:text-4xl font-black mb-2" style="color:#f1f5f9;">
+                    The Invisible Game
+                </h3>
+                <p class="text-sm font-medium mb-1" style="color:var(--gold);">
+                    The unwritten rules of corporate power that MBAs never teach you
+                </p>
+                <p class="text-xs mb-6" style="color:#475569;">A book by Vipul Kumar &nbsp;·&nbsp; Coming Soon</p>
+
+                <!-- Pull quote -->
+                <blockquote class="border-l-2 pl-5 mb-6 italic text-base leading-relaxed"
+                            style="border-color:var(--gold); color:#cbd5e1;">
+                    "You were hired for your skills. You'll be fired for your politics.
+                    And you'll succeed only when you master both."
+                </blockquote>
+
+                <p class="text-sm leading-relaxed mb-5" style="color:#64748b;">
+                    Every organisation runs two companies simultaneously — the org chart you can see,
+                    and the influence map no one draws. After 30 years across tech, strategy, and finance,
+                    Vipul Kumar has decoded the invisible one. This book maps it for the first time —
+                    with real war stories, no jargon, and three frameworks that actually work.
+                </p>
+
+                <!-- Three maps -->
+                <div class="space-y-3 mb-7">
+                    <div class="flex gap-3 items-start">
+                        <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5"
+                              style="background:rgba(201,160,62,0.12); color:var(--gold);">Map 1</span>
+                        <p class="text-sm" style="color:#64748b;"><strong style="color:#94a3b8;">The Org Chart</strong> — who is accountable. Almost no one who is influential.</p>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5"
+                              style="background:rgba(201,160,62,0.12); color:var(--gold);">Map 2</span>
+                        <p class="text-sm" style="color:#64748b;"><strong style="color:#94a3b8;">The Influence Map</strong> — whose two sentences determine the outcome before the meeting starts.</p>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5"
+                              style="background:rgba(201,160,62,0.12); color:var(--gold);">Map 3</span>
+                        <p class="text-sm" style="color:#64748b;"><strong style="color:#94a3b8;">The Loyalty Map</strong> — the most dangerous one to misread, as 2008 taught me firsthand.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="chip text-xs px-3 py-1.5 rounded-full">Work in Progress</span>
+                    <span class="chip text-xs px-3 py-1.5 rounded-full">Leadership &amp; Strategy</span>
+                    <span class="chip text-xs px-3 py-1.5 rounded-full">For Gen Z &amp; Senior Leaders</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end gap-5">
+                <!-- Book cover -->
+                <div class="w-40 h-56 rounded-xl flex flex-col items-center justify-center text-center shadow-2xl"
+                     style="background:linear-gradient(160deg, #1c1405, #2e2008, #1a1505);
+                            border:1px solid rgba(201,160,62,0.4);
+                            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,160,62,0.1);">
+                    <div class="w-8 h-px mb-6" style="background:var(--gold);"></div>
+                    <p class="serif text-sm font-black px-4 leading-tight mb-2" style="color:#e2bc6a;">The<br>Invisible<br>Game</p>
+                    <div class="w-8 h-px mb-5" style="background:rgba(201,160,62,0.4);"></div>
+                    <p class="text-xs tracking-widest uppercase" style="color:#64748b;">Vipul Kumar</p>
+                </div>
+                <!-- Teaser stat -->
+                <div class="text-center">
+                    <p class="text-xs uppercase tracking-wider" style="color:#334155;">Three articles published</p>
+                    <p class="text-xs mt-1" style="color:#1f2937;">on LinkedIn · #TheInvisibleGame</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
-<footer class="border-t border-slate-800 py-8 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
-        <span>© 2025 Vipul Kumar · VKDesignLabs</span>
+<div class="gold-divider max-w-6xl mx-auto opacity-30"></div>
+
+<!-- ── CONTACT ────────────────────────────────────────────────────────────────── -->
+<section id="contact" class="py-28 px-6 max-w-4xl mx-auto text-center">
+    <div class="reveal">
+        <p class="section-label mb-3">Let's Build</p>
+        <h2 class="serif text-4xl md:text-5xl font-black mb-6" style="color:#f1f5f9;">
+            Ready to Architect<br>
+            <span class="gold-text">Something Real?</span>
+        </h2>
+        <p class="max-w-lg mx-auto mb-12 text-lg leading-relaxed" style="color:#64748b;">
+            Open to strategic consulting, advisory roles, and fractional CTO engagements
+            in AI systems, industrial IoT, and data architecture.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center mb-8">
+            <a href="mailto:vk@vkdesignlabs.com"
+               style="background:var(--gold); color:#06090f;"
+               class="px-10 py-4 rounded-xl font-bold transition-all hover:opacity-90 hover:scale-105 text-lg">
+                vk@vkdesignlabs.com
+            </a>
+            <a href="https://linkedin.com/in/vipulk" target="_blank" rel="noopener"
+               style="border:1px solid rgba(201,160,62,0.3); color:#e2bc6a;"
+               class="px-10 py-4 rounded-xl font-semibold transition-all hover:border-yellow-400 text-lg">
+                LinkedIn ↗
+            </a>
+            <a href="https://github.com/vipul9811kumar" target="_blank" rel="noopener"
+               style="border:1px solid rgba(255,255,255,0.08); color:#64748b;"
+               class="px-10 py-4 rounded-xl font-semibold transition-all hover:text-white text-lg">
+                GitHub ↗
+            </a>
+        </div>
+        <p class="text-sm" style="color:#334155;">Orange County, CA &nbsp;·&nbsp; 919-903-4693 &nbsp;·&nbsp; Remote · Hybrid · On-site</p>
+    </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────────────────────── -->
+<footer style="border-top:1px solid rgba(201,160,62,0.1);" class="py-8 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm" style="color:#334155;">
+        <span>© 2026 Vipul Kumar · VKDesignLabs</span>
         <div class="flex gap-6">
-            <a href="https://kinetic-core.tech" target="_blank" class="hover:text-slate-300 transition-colors">Kinetic Core</a>
-            <a href="https://volt-ledger.com"   target="_blank" class="hover:text-slate-300 transition-colors">VoltLedger</a>
-            <a href="https://reskillio.com"      target="_blank" class="hover:text-slate-300 transition-colors">ReSkillio</a>
-            <a href="https://rasoilink.com"      target="_blank" class="hover:text-slate-300 transition-colors">RasoiLink</a>
+            <a href="https://kinetic-core.tech" target="_blank" class="hover:text-slate-400 transition-colors">Kinetic Core</a>
+            <a href="https://volt-ledger.com"   target="_blank" class="hover:text-slate-400 transition-colors">VoltLedger</a>
+            <a href="https://reskillio.com"      target="_blank" class="hover:text-slate-400 transition-colors">ReSkillio</a>
+            <a href="https://rasoilink.com"      target="_blank" class="hover:text-slate-400 transition-colors">RasoiLink</a>
         </div>
     </div>
 </footer>
 
-<!-- ── SCROLL REVEAL ──────────────────────────────────────────────────────── -->
 <script>
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
