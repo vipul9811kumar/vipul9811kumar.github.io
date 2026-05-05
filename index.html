@@ -818,14 +818,14 @@
 
             <div class="flex flex-col items-center md:items-end gap-5">
                 <!-- Book cover -->
-                <div class="w-40 h-56 rounded-xl flex flex-col items-center justify-center text-center shadow-2xl"
-                     style="background:linear-gradient(160deg, #1c1405, #2e2008, #1a1505);
-                            border:1px solid rgba(201,160,62,0.4);
-                            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,160,62,0.1);">
-                    <div class="w-8 h-px mb-6" style="background:var(--gold);"></div>
-                    <p class="serif text-sm font-black px-4 leading-tight mb-2" style="color:#e2bc6a;">The<br>Invisible<br>Game</p>
-                    <div class="w-8 h-px mb-5" style="background:rgba(201,160,62,0.4);"></div>
-                    <p class="text-xs tracking-widest uppercase" style="color:#64748b;">Vipul Kumar</p>
+                <div class="relative group">
+                    <img src="invisible_game_cover_vipul_kumar.png" alt="The Invisible Game — Vipul Kumar"
+                         class="w-44 rounded-xl object-cover"
+                         style="box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,160,62,0.25);
+                                transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                         onmouseover="this.style.transform='scale(1.03) translateY(-4px)';this.style.boxShadow='0 35px 70px rgba(0,0,0,0.8), 0 0 0 1px rgba(201,160,62,0.4)'"
+                         onmouseout="this.style.transform='scale(1) translateY(0)';this.style.boxShadow='0 25px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,160,62,0.25)'"
+                    >
                 </div>
                 <!-- Teaser stat -->
                 <a href="https://www.linkedin.com/in/vipulk" target="_blank" rel="noopener" class="text-center hover:opacity-80 transition-opacity">
