@@ -411,7 +411,8 @@
                     <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>RAG / Vector Search</li>
                     <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>FAISS · Pinecone · ChromaDB</li>
                     <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>spaCy NLP · HuggingFace</li>
-                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>AutoGen · Prompt Engineering</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Eval Harness · LLMOps</li>
+                    <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>AI Observability &amp; Drift Monitoring</li>
                 </ul>
             </div>
             <div class="card rounded-xl p-6">
@@ -449,6 +450,90 @@
                     <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Docker / Railway</li>
                     <li class="text-sm flex gap-2" style="color:#94a3b8;"><span class="w-1 h-1 rounded-full flex-shrink-0 mt-2" style="background:var(--gold);"></span>Turborepo / pnpm</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- AI Reliability Strip -->
+        <div class="mt-10 reveal rounded-2xl overflow-hidden" style="background:linear-gradient(135deg, #070c14 0%, #0a0e18 60%, #060b13 100%); border:1px solid rgba(201,160,62,0.25);">
+
+            <!-- Top label bar -->
+            <div class="px-8 pt-6 pb-4 flex items-center gap-4" style="border-bottom:1px solid rgba(201,160,62,0.08);">
+                <span class="section-label">Signature Methodology</span>
+                <div class="flex-1 h-px" style="background:rgba(201,160,62,0.1);"></div>
+                <span class="text-xs" style="color:#334155;">Production AI &nbsp;·&nbsp; LLMOps &nbsp;·&nbsp; Eval Engineering</span>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-0">
+
+                <!-- LEFT — content -->
+                <div class="md:col-span-3 p-8 md:p-10 flex flex-col justify-center">
+
+                    <h3 class="serif text-3xl md:text-4xl font-black mb-2 leading-tight" style="color:#f1f5f9;">
+                        Evaluation is the Product.
+                    </h3>
+                    <p class="text-sm font-medium mb-6" style="color:var(--gold);">
+                        If you can't measure reliability, you're not building enterprise AI. You're building a demo.
+                    </p>
+
+                    <blockquote class="border-l-2 pl-5 mb-7 italic text-base leading-relaxed"
+                                style="border-color:var(--gold); color:#94a3b8;">
+                        "When you quote 91% diagnostic accuracy on a held-out test set — what's your eval harness? Golden dataset, scoring rubric, handling agent non-determinism."
+                    </blockquote>
+
+                    <!-- Metric chips -->
+                    <div class="flex flex-wrap gap-3 mb-7">
+                        <span class="chip text-xs px-4 py-2 rounded-full font-semibold">91% Top-1 Diagnostic Accuracy</span>
+                        <span class="chip text-xs px-4 py-2 rounded-full font-semibold">97% Top-3 Recall</span>
+                        <span class="chip text-xs px-4 py-2 rounded-full font-semibold">100% Citation Faithfulness</span>
+                    </div>
+
+                    <!-- 6-layer framework -->
+                    <p class="text-xs uppercase tracking-wider font-semibold mb-4" style="color:#475569;">The Eval Framework — 6 Layers</p>
+                    <div class="grid sm:grid-cols-2 gap-2.5 mb-7">
+                        <div class="flex gap-3 items-start">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5" style="background:rgba(201,160,62,0.12); color:var(--gold);">01</span>
+                            <p class="text-sm" style="color:#64748b;">Hand-labeled <strong style="color:#94a3b8;">golden dataset</strong> of 200 real incidents</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5" style="background:rgba(201,160,62,0.12); color:var(--gold);">02</span>
+                            <p class="text-sm" style="color:#64748b;"><strong style="color:#94a3b8;">Adversarial edge cases</strong> targeting known LLM failure modes</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5" style="background:rgba(201,160,62,0.12); color:var(--gold);">03</span>
+                            <p class="text-sm" style="color:#64748b;"><strong style="color:#94a3b8;">Multi-run scoring</strong> to account for model non-determinism</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5" style="background:rgba(201,160,62,0.12); color:var(--gold);">04</span>
+                            <p class="text-sm" style="color:#64748b;"><strong style="color:#94a3b8;">Stability regression</strong> across every prompt and model change</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5" style="background:rgba(201,160,62,0.12); color:var(--gold);">05</span>
+                            <p class="text-sm" style="color:#64748b;"><strong style="color:#94a3b8;">Automated CI/CD evaluation</strong> gates on every PR</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5" style="background:rgba(201,160,62,0.12); color:var(--gold);">06</span>
+                            <p class="text-sm" style="color:#64748b;"><strong style="color:#94a3b8;">Drift monitoring</strong> via persisted eval telemetry over time</p>
+                        </div>
+                    </div>
+
+                    <p class="text-sm italic leading-relaxed" style="color:#475569;">
+                        Agentic systems don't fail loudly.
+                        <strong style="color:#94a3b8;">They fail convincingly.</strong>
+                        Enterprise AI maturity is moving from "can the model answer?" to
+                        "can the system prove reliability repeatedly under uncertainty?" That's a very different engineering problem.
+                    </p>
+                </div>
+
+                <!-- RIGHT — eval image -->
+                <div class="md:col-span-2 flex items-center justify-center p-6 md:p-8 relative overflow-hidden">
+                    <div class="absolute inset-0 pointer-events-none"
+                         style="background:radial-gradient(ellipse at center, rgba(201,160,62,0.06) 0%, transparent 70%);"></div>
+                    <img src="AI Eval.png"
+                         alt="AI Evaluation Harness — Production Reliability Framework"
+                         class="relative z-10 w-full object-contain rounded-xl"
+                         style="filter: drop-shadow(0 20px 40px rgba(0,0,0,0.7));
+                                border: 1px solid rgba(201,160,62,0.15);">
+                </div>
             </div>
         </div>
 
