@@ -94,7 +94,14 @@ export default async function handler(req, res) {
                     </div>
                 `,
             }),
-        }).catch(err => console.error('Resend error:', err));
+        }).then(async r => {
+            if (!r.ok) {
+                const body = await r.text();
+                console.error('Resend error:', r.status, body);
+            } else {
+                console.log('Resend OK:', r.status);
+            }
+        }).catch(err => console.error('Resend fetch error:', err));
     }
 
     return res.status(200).json({ success: true });
