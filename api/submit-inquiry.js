@@ -1,4 +1,7 @@
 export default async function handler(req, res) {
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
@@ -13,9 +16,15 @@ export default async function handler(req, res) {
     const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
     const RESEND_API_KEY   = process.env.RESEND_API_KEY;
 
+    if (!AIRTABLE_TOKEN || !AIRTABLE_BASE_ID) {
+        console.error('Missing env vars: AIRTABLE_TOKEN or AIRTABLE_BASE_ID');
+        return res.status(500).json({ error: 'Server misconfiguration' });
+    }
+
+    // ── 1. Write to Airtable ──────────────────────────────────────────────
+    let airtableRes;
     try {
-        // ── 1. Write to Airtable ──────────────────────────────────────────
-        const airtableRes = await fetch(
+        airtableRes = await fetch(
             `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Leads`,
             {
                 method: 'POST',
@@ -25,27 +34,32 @@ export default async function handler(req, res) {
                 },
                 body: JSON.stringify({
                     fields: {
-                        Name:         name,
-                        Email:        email,
-                        Phone:        phone        || '',
-                        Company:      company      || '',
-                        'Inquiry Type': inquiryType,
-                        'Budget Range': budget     || '',
-                        Message:      message      || '',
-                        Status:       'New',
+                        Name:             name,
+                        Email:            email,
+                        Phone:            phone        || '',
+                        Company:          company      || '',
+                        'Inquiry Type':   inquiryType,
+                        'Budget Range':   budget       || '',
+                        Message:          message      || '',
+                        Status:           'New',
                     },
                 }),
             }
         );
+    } catch (err) {
+        console.error('Airtable fetch error:', err);
+        return res.status(500).json({ error: 'Failed to reach Airtable' });
+    }
 
-        if (!airtableRes.ok) {
-            const err = await airtableRes.text();
-            console.error('Airtable error:', err);
-            return res.status(500).json({ error: 'Failed to save inquiry' });
-        }
+    if (!airtableRes.ok) {
+        const errText = await airtableRes.text();
+        console.error('Airtable error response:', airtableRes.status, errText);
+        return res.status(500).json({ error: 'Failed to save inquiry', detail: errText });
+    }
 
-        // ── 2. Send notification email via Resend ─────────────────────────
-        await fetch('https://api.resend.com/emails', {
+    // ── 2. Notify via Resend (non-fatal) ──────────────────────────────────
+    if (RESEND_API_KEY) {
+        fetch('https://api.resend.com/emails', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${RESEND_API_KEY}`,
@@ -79,12 +93,8 @@ export default async function handler(req, res) {
                     </div>
                 `,
             }),
-        });
-
-        return res.status(200).json({ success: true });
-
-    } catch (err) {
-        console.error('Handler error:', err);
-        return res.status(500).json({ error: 'Server error' });
+        }).catch(err => console.error('Resend error:', err));
     }
+
+    return res.status(200).json({ success: true });
 }
