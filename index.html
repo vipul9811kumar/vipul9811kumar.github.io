@@ -1189,6 +1189,11 @@
                                   onblur="this.style.borderColor='rgba(255,255,255,0.08)'"></textarea>
                     </div>
 
+                    <div style="position:absolute; left:-9999px; top:-9999px; height:0; width:0; overflow:hidden;" aria-hidden="true">
+                        <label for="inquiry-website">Leave this field empty</label>
+                        <input type="text" id="inquiry-website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
                     <button type="submit" id="submit-btn"
                             class="w-full py-4 rounded-xl font-bold text-sm transition-all hover:opacity-90"
                             style="background:var(--gold); color:#06090f;">
@@ -1316,6 +1321,11 @@
                                    onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
                         </div>
 
+                        <div style="position:absolute; left:-9999px; top:-9999px; height:0; width:0; overflow:hidden;" aria-hidden="true">
+                            <label for="coaching-website">Leave this field empty</label>
+                            <input type="text" id="coaching-website" name="coachWebsite" tabindex="-1" autocomplete="off">
+                        </div>
+
                         <button type="submit" id="coaching-btn"
                                 class="w-full py-4 rounded-xl font-bold text-sm transition-all hover:opacity-90"
                                 style="background:var(--gold); color:#06090f;">
@@ -1380,6 +1390,7 @@
                     inquiryType: this.inquiryType.value,
                     budget:      this.budget.value,
                     message:     this.message.value,
+                    website:     this.website.value,
                 }),
             });
             if (res.ok) {
@@ -1418,6 +1429,7 @@
                     targetRole:  this.targetRole.value,
                     prepGap:     this.prepGap.value,
                     linkedin:    this.linkedin.value,
+                    coachWebsite: this.coachWebsite.value,
                 }),
             });
             if (res.ok) {

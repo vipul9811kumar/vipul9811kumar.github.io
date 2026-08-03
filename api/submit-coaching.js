@@ -6,7 +6,14 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const { name, email, phone, yearsExp, currentRole, targetRole, prepGap, linkedin } = req.body;
+    const { name, email, phone, yearsExp, currentRole, targetRole, prepGap, linkedin, coachWebsite } = req.body;
+
+    // Honeypot: real users never see or fill this field, so any value means a bot.
+    // Return success without writing to Airtable/Resend so the bot thinks it worked.
+    if (coachWebsite) {
+        console.warn('Honeypot triggered on submit-coaching, dropping submission');
+        return res.status(200).json({ success: true });
+    }
 
     if (!name || !email || !currentRole || !targetRole) {
         return res.status(400).json({ error: 'Name, email, current role and target role are required' });
